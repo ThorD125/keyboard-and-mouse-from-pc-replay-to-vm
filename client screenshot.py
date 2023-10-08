@@ -16,4 +16,4 @@ resized_screenshot = screenshot.resize((new_width, new_height))
 
 # Replace 'screenshot.png' with the desired file name and format
 # screenshot.save('screenshot.png')
-resized_screenshot.save('sssscreenshot.png')
+resized_screenshot.save('screenshot.png')

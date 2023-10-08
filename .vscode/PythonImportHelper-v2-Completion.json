@@ -1,5 +1,14 @@
 [
     {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
         "label": "pyautogui",
         "kind": 6,
         "isExtraImport": true,
@@ -14,15 +23,6 @@
         "description": "PIL",
         "isExtraImport": true,
         "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "socket",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "socket",
-        "description": "socket",
-        "detail": "socket",
         "documentation": {}
     },
     {
@@ -53,6 +53,33 @@
         "documentation": {}
     },
     {
+        "label": "SERVER_HOST",
+        "kind": 5,
+        "importPath": "client pic",
+        "description": "client pic",
+        "peekOfCode": "SERVER_HOST = '127.0.0.1'  # Replace with the server's IP address or hostname\nSERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\n# Send the picture data to the server\nwith open(\"clientscreenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:",
+        "detail": "client pic",
+        "documentation": {}
+    },
+    {
+        "label": "SERVER_PORT",
+        "kind": 5,
+        "importPath": "client pic",
+        "description": "client pic",
+        "peekOfCode": "SERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\n# Send the picture data to the server\nwith open(\"clientscreenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:\n        client_socket.send(data)",
+        "detail": "client pic",
+        "documentation": {}
+    },
+    {
+        "label": "client_socket",
+        "kind": 5,
+        "importPath": "client pic",
+        "description": "client pic",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\n# Send the picture data to the server\nwith open(\"clientscreenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:\n        client_socket.send(data)\n        data = file.read(1024)\nprint(\"[+] Picture sent to the server.\")",
+        "detail": "client pic",
+        "documentation": {}
+    },
+    {
         "label": "app_window",
         "kind": 5,
         "importPath": "client screenshot",
@@ -66,7 +93,7 @@
         "kind": 5,
         "importPath": "client screenshot",
         "description": "client screenshot",
-        "peekOfCode": "screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('sssscreenshot.png')",
+        "peekOfCode": "screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('screenshot.png')",
         "detail": "client screenshot",
         "documentation": {}
     },
@@ -75,7 +102,7 @@
         "kind": 5,
         "importPath": "client screenshot",
         "description": "client screenshot",
-        "peekOfCode": "new_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('sssscreenshot.png')",
+        "peekOfCode": "new_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('screenshot.png')",
         "detail": "client screenshot",
         "documentation": {}
     },
@@ -84,7 +111,7 @@
         "kind": 5,
         "importPath": "client screenshot",
         "description": "client screenshot",
-        "peekOfCode": "new_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('sssscreenshot.png')",
+        "peekOfCode": "new_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('screenshot.png')",
         "detail": "client screenshot",
         "documentation": {}
     },
@@ -93,7 +120,7 @@
         "kind": 5,
         "importPath": "client screenshot",
         "description": "client screenshot",
-        "peekOfCode": "resized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('sssscreenshot.png')",
+        "peekOfCode": "resized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('screenshot.png')",
         "detail": "client screenshot",
         "documentation": {}
     },
@@ -140,6 +167,33 @@
         "description": "server basic",
         "peekOfCode": "port = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")\n# Accept a connection from a client\nclient_socket, client_address = server_socket.accept()\nprint(f\"Accepted connection from {client_address}\")\nwhile True:\n    # Receive data from the client",
         "detail": "server basic",
+        "documentation": {}
+    },
+    {
+        "label": "SERVER_HOST",
+        "kind": 5,
+        "importPath": "server pic",
+        "description": "server pic",
+        "peekOfCode": "SERVER_HOST = '127.0.0.1'  # Listen on all available interfaces\nSERVER_PORT = 12345\n# Create a socket object\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the server socket to the address and port\nserver_socket.bind((SERVER_HOST, SERVER_PORT))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"[*] Listening on {SERVER_HOST}:{SERVER_PORT}\")\n# Accept a connection from a client",
+        "detail": "server pic",
+        "documentation": {}
+    },
+    {
+        "label": "SERVER_PORT",
+        "kind": 5,
+        "importPath": "server pic",
+        "description": "server pic",
+        "peekOfCode": "SERVER_PORT = 12345\n# Create a socket object\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the server socket to the address and port\nserver_socket.bind((SERVER_HOST, SERVER_PORT))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"[*] Listening on {SERVER_HOST}:{SERVER_PORT}\")\n# Accept a connection from a client\nclient_socket, client_address = server_socket.accept()",
+        "detail": "server pic",
+        "documentation": {}
+    },
+    {
+        "label": "server_socket",
+        "kind": 5,
+        "importPath": "server pic",
+        "description": "server pic",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the server socket to the address and port\nserver_socket.bind((SERVER_HOST, SERVER_PORT))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"[*] Listening on {SERVER_HOST}:{SERVER_PORT}\")\n# Accept a connection from a client\nclient_socket, client_address = server_socket.accept()\nprint(f\"[*] Accepted connection from {client_address[0]}:{client_address[1]}\")\n# Receive the picture data from the client and save it to a file",
+        "detail": "server pic",
         "documentation": {}
     },
     {
