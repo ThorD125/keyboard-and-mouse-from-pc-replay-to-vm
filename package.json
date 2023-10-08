@@ -1,0 +1,12 @@
+{
+    "name": "wf",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/ThorD125/wftesting",
+    "author": "ThorD125",
+    "license": "GPL-3.0-only",
+    "scripts": {
+        "save": "git add . && git commit -m f && git push && git status",
+        "update": "git fetch origin && git checkout development && git pull"
+    }
+}

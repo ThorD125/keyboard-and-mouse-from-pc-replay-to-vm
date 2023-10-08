@@ -1,0 +1,227 @@
+[
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "pygetwindow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygetwindow",
+        "description": "pygetwindow",
+        "detail": "pygetwindow",
+        "documentation": {}
+    },
+    {
+        "label": "pyautogui",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyautogui",
+        "description": "pyautogui",
+        "detail": "pyautogui",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "keyboard",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "keyboard",
+        "description": "keyboard",
+        "detail": "keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "client_socket",
+        "kind": 5,
+        "importPath": "client",
+        "description": "client",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nserver_address = ('192.168.32.156', 12345)  # Replace with the server's address and port\nclient_socket.connect(server_address)\nwhile True:\n    # Get user input\n    message = input(\"Enter a message to send to the server (or type 'exit' to quit): \")\n    if message == 'exit':\n        break  # Exit the loop if the user types 'exit'\n    # Send the message to the server",
+        "detail": "client",
+        "documentation": {}
+    },
+    {
+        "label": "server_address",
+        "kind": 5,
+        "importPath": "client",
+        "description": "client",
+        "peekOfCode": "server_address = ('192.168.32.156', 12345)  # Replace with the server's address and port\nclient_socket.connect(server_address)\nwhile True:\n    # Get user input\n    message = input(\"Enter a message to send to the server (or type 'exit' to quit): \")\n    if message == 'exit':\n        break  # Exit the loop if the user types 'exit'\n    # Send the message to the server\n    client_socket.send(message.encode('utf-8'))\n# Close the socket",
+        "detail": "client",
+        "documentation": {}
+    },
+    {
+        "label": "server_socket",
+        "kind": 5,
+        "importPath": "server basic",
+        "description": "server basic",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to a specific address and port\nhost = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")\n# Accept a connection from a client\nclient_socket, client_address = server_socket.accept()",
+        "detail": "server basic",
+        "documentation": {}
+    },
+    {
+        "label": "host",
+        "kind": 5,
+        "importPath": "server basic",
+        "description": "server basic",
+        "peekOfCode": "host = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")\n# Accept a connection from a client\nclient_socket, client_address = server_socket.accept()\nprint(f\"Accepted connection from {client_address}\")\nwhile True:",
+        "detail": "server basic",
+        "documentation": {}
+    },
+    {
+        "label": "port",
+        "kind": 5,
+        "importPath": "server basic",
+        "description": "server basic",
+        "peekOfCode": "port = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")\n# Accept a connection from a client\nclient_socket, client_address = server_socket.accept()\nprint(f\"Accepted connection from {client_address}\")\nwhile True:\n    # Receive data from the client",
+        "detail": "server basic",
+        "documentation": {}
+    },
+    {
+        "label": "press",
+        "kind": 2,
+        "importPath": "serversend key x",
+        "description": "serversend key x",
+        "peekOfCode": "def press(button):\n    keyboard.press_and_release(button)\n    time.sleep(0.3)\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates",
+        "detail": "serversend key x",
+        "documentation": {}
+    },
+    {
+        "label": "window",
+        "kind": 5,
+        "importPath": "serversend key x",
+        "description": "serversend key x",
+        "peekOfCode": "window = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)",
+        "detail": "serversend key x",
+        "documentation": {}
+    },
+    {
+        "label": "center_x",
+        "kind": 5,
+        "importPath": "serversend key x",
+        "description": "serversend key x",
+        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(10)\npress('x')\nprint(\"done\")",
+        "detail": "serversend key x",
+        "documentation": {}
+    },
+    {
+        "label": "center_y",
+        "kind": 5,
+        "importPath": "serversend key x",
+        "description": "serversend key x",
+        "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(10)\npress('x')\nprint(\"done\")",
+        "detail": "serversend key x",
+        "documentation": {}
+    },
+    {
+        "label": "press",
+        "kind": 2,
+        "importPath": "serversend key",
+        "description": "serversend key",
+        "peekOfCode": "def press(button):\n    keyboard.press_and_release(button)\n    time.sleep(0.3)\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates",
+        "detail": "serversend key",
+        "documentation": {}
+    },
+    {
+        "label": "window",
+        "kind": 5,
+        "importPath": "serversend key",
+        "description": "serversend key",
+        "peekOfCode": "window = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)",
+        "detail": "serversend key",
+        "documentation": {}
+    },
+    {
+        "label": "center_x",
+        "kind": 5,
+        "importPath": "serversend key",
+        "description": "serversend key",
+        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(1)\npress('x')\nprint(\"done\")",
+        "detail": "serversend key",
+        "documentation": {}
+    },
+    {
+        "label": "center_y",
+        "kind": 5,
+        "importPath": "serversend key",
+        "description": "serversend key",
+        "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(1)\npress('x')\nprint(\"done\")",
+        "detail": "serversend key",
+        "documentation": {}
+    },
+    {
+        "label": "press",
+        "kind": 2,
+        "importPath": "servertogether",
+        "description": "servertogether",
+        "peekOfCode": "def press(button):\n    keyboard.press_and_release(button)\n    time.sleep(0.3)\n# Create a socket object\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to a specific address and port\nhost = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Find the window by its title",
+        "detail": "servertogether",
+        "documentation": {}
+    },
+    {
+        "label": "server_socket",
+        "kind": 5,
+        "importPath": "servertogether",
+        "description": "servertogether",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to a specific address and port\nhost = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# window = gw.getWindowsWithTitle(\"Notepad\")[0]\n# Activate the window\nwindow.activate()",
+        "detail": "servertogether",
+        "documentation": {}
+    },
+    {
+        "label": "host",
+        "kind": 5,
+        "importPath": "servertogether",
+        "description": "servertogether",
+        "peekOfCode": "host = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# window = gw.getWindowsWithTitle(\"Notepad\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()",
+        "detail": "servertogether",
+        "documentation": {}
+    },
+    {
+        "label": "port",
+        "kind": 5,
+        "importPath": "servertogether",
+        "description": "servertogether",
+        "peekOfCode": "port = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# window = gw.getWindowsWithTitle(\"Notepad\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates",
+        "detail": "servertogether",
+        "documentation": {}
+    },
+    {
+        "label": "window",
+        "kind": 5,
+        "importPath": "servertogether",
+        "description": "servertogether",
+        "peekOfCode": "window = gw.getWindowsWithTitle(\"Warframe\")[0]\n# window = gw.getWindowsWithTitle(\"Notepad\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen",
+        "detail": "servertogether",
+        "documentation": {}
+    },
+    {
+        "label": "center_x",
+        "kind": 5,
+        "importPath": "servertogether",
+        "description": "servertogether",
+        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(1)\n# press('t')\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")",
+        "detail": "servertogether",
+        "documentation": {}
+    },
+    {
+        "label": "center_y",
+        "kind": 5,
+        "importPath": "servertogether",
+        "description": "servertogether",
+        "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(1)\n# press('t')\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")\n# Accept a connection from a client",
+        "detail": "servertogether",
+        "documentation": {}
+    }
+]
