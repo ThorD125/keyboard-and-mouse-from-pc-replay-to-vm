@@ -405,7 +405,16 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "server_socket = create_server_socket('127.0.0.1', 12345)\nclient_socket, client_address = server_socket.accept()\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:\n        break  \n    print(f\"Received: {data}\")\nclient_socket.close()\nserver_socket.close()",
+        "peekOfCode": "server_socket = create_server_socket('127.0.0.1', 12345)\nclient_socket, client_address = server_socket.accept()\nstate = False\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:\n        break\n    print(f\"Received: {data}\")",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "state",
+        "kind": 5,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "state = False\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:\n        break\n    print(f\"Received: {data}\")\nclient_socket.close()\nserver_socket.close()",
         "detail": "server",
         "documentation": {}
     },
