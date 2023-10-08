@@ -369,7 +369,7 @@
         "kind": 5,
         "importPath": "client",
         "description": "client",
-        "peekOfCode": "client_socket = connect_to_server(\"192.168.32.156\", 12345)\n# client_socket = connect_to_server(\"127.0.0.1\", 12345)\n# previous_state_w = False\n# while True:\n#     current_state_w = keyboard.is_pressed(\"w\")\n#     if current_state_w != previous_state_w:\n#         if current_state_w:\n#             message = \"press:w\"\n#             client_socket.send(message.encode('utf-8'))\n#         else:",
+        "peekOfCode": "client_socket = connect_to_server(\"192.168.32.156\", 12345)\n# client_socket = connect_to_server(\"127.0.0.1\", 12345)\nkeys_to_monitor = [\"w\", \"a\", \"s\", \"d\"]\nprevious_states = {key: False for key in keys_to_monitor}\nwhile True:\n    for key in keys_to_monitor:\n        current_state = keyboard.is_pressed(key)\n        if current_state != previous_states[key]:\n            if current_state:\n                message = f\"press:{key}\"",
         "detail": "client",
         "documentation": {}
     },
@@ -414,7 +414,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "server_socket = create_server_socket('192.168.32.156', 12345)\n# server_socket = create_server_socket('127.0.0.1', 12345)\nwindow = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)\n# while True:",
+        "peekOfCode": "server_socket = create_server_socket('192.168.32.156', 12345)\n# server_socket = create_server_socket('127.0.0.1', 12345)\nwindow = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    \nwhile True:",
         "detail": "server",
         "documentation": {}
     },
@@ -423,7 +423,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "window = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)\n# while True:\n#     data = client_socket.recv(1024).decode('utf-8')\n#     if not data: ",
+        "peekOfCode": "window = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    \nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:",
         "detail": "server",
         "documentation": {}
     },
@@ -432,7 +432,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)\n# while True:\n#     data = client_socket.recv(1024).decode('utf-8')\n#     if not data: \n#         break\n#     if data == \"press:w\":\n#         press(\"w\")",
+        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    \nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:\n        break\n    if \"press\" in data:\n        keyboard.press(data.split(\":\")[1])",
         "detail": "server",
         "documentation": {}
     },
@@ -441,7 +441,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "center_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)\n# while True:\n#     data = client_socket.recv(1024).decode('utf-8')\n#     if not data: \n#         break\n#     if data == \"press:w\":\n#         press(\"w\")\n#     elif data == \"release:w\":",
+        "peekOfCode": "center_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    \nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:\n        break\n    if \"press\" in data:\n        keyboard.press(data.split(\":\")[1])\n    elif \"release\" in data:",
         "detail": "server",
         "documentation": {}
     },
