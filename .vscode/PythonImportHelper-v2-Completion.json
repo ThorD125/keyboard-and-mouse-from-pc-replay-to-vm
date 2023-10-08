@@ -369,16 +369,16 @@
         "kind": 5,
         "importPath": "client",
         "description": "client",
-        "peekOfCode": "client_socket = connect_to_server(\"192.168.32.156\", 12345)\n# client_socket = connect_to_server(\"127.0.0.1\", 12345)\nprevious_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"w\")\n    if current_state != previous_state:\n        if current_state:\n            message = \"press:w\"\n            client_socket.send(message.encode('utf-8'))\n        else:",
+        "peekOfCode": "client_socket = connect_to_server(\"192.168.32.156\", 12345)\n# client_socket = connect_to_server(\"127.0.0.1\", 12345)\nprevious_state_w = False\nwhile True:\n    current_state_w = keyboard.is_pressed(\"w\")\n    if current_state_w != previous_state_w:\n        if current_state_w:\n            message = \"press:w\"\n            client_socket.send(message.encode('utf-8'))\n        else:",
         "detail": "client",
         "documentation": {}
     },
     {
-        "label": "previous_state",
+        "label": "previous_state_w",
         "kind": 5,
         "importPath": "client",
         "description": "client",
-        "peekOfCode": "previous_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"w\")\n    if current_state != previous_state:\n        if current_state:\n            message = \"press:w\"\n            client_socket.send(message.encode('utf-8'))\n        else:\n            message = \"release:w\"\n            client_socket.send(message.encode('utf-8'))",
+        "peekOfCode": "previous_state_w = False\nwhile True:\n    current_state_w = keyboard.is_pressed(\"w\")\n    if current_state_w != previous_state_w:\n        if current_state_w:\n            message = \"press:w\"\n            client_socket.send(message.encode('utf-8'))\n        else:\n            message = \"release:w\"\n            client_socket.send(message.encode('utf-8'))",
         "detail": "client",
         "documentation": {}
     },
@@ -405,7 +405,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "server_socket = create_server_socket('192.168.32.156', 12345)\n# server_socket = create_server_socket('127.0.0.1', 12345)\nwindow = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\ntime.sleep(1)\npyautogui.click(center_x, center_y)\nclient_socket, client_address = server_socket.accept()",
+        "peekOfCode": "server_socket = create_server_socket('192.168.32.156', 12345)\n# server_socket = create_server_socket('127.0.0.1', 12345)\nwindow = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)\nwhile True:",
         "detail": "server",
         "documentation": {}
     },
@@ -414,7 +414,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "window = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\ntime.sleep(1)\npyautogui.click(center_x, center_y)\nclient_socket, client_address = server_socket.accept()\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')",
+        "peekOfCode": "window = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data: ",
         "detail": "server",
         "documentation": {}
     },
@@ -423,7 +423,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\ntime.sleep(1)\npyautogui.click(center_x, center_y)\nclient_socket, client_address = server_socket.accept()\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data: \n        break",
+        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data: \n        break\n    if data == \"press:w\":\n        press(\"w\")",
         "detail": "server",
         "documentation": {}
     },
@@ -432,7 +432,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "center_y = screen_height // 2\ntime.sleep(1)\npyautogui.click(center_x, center_y)\nclient_socket, client_address = server_socket.accept()\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data: \n        break\n    if data == \"press:w\":",
+        "peekOfCode": "center_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data: \n        break\n    if data == \"press:w\":\n        press(\"w\")\n    elif data == \"release:w\":",
         "detail": "server",
         "documentation": {}
     },
