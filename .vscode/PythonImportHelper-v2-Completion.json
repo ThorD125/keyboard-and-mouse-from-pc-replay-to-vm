@@ -1,5 +1,22 @@
 [
     {
+        "label": "pyautogui",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyautogui",
+        "description": "pyautogui",
+        "detail": "pyautogui",
+        "documentation": {}
+    },
+    {
+        "label": "ImageGrab",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
         "label": "socket",
         "kind": 6,
         "isExtraImport": true,
@@ -18,15 +35,6 @@
         "documentation": {}
     },
     {
-        "label": "pyautogui",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pyautogui",
-        "description": "pyautogui",
-        "detail": "pyautogui",
-        "documentation": {}
-    },
-    {
         "label": "time",
         "kind": 6,
         "isExtraImport": true,
@@ -42,6 +50,51 @@
         "importPath": "keyboard",
         "description": "keyboard",
         "detail": "keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "app_window",
+        "kind": 5,
+        "importPath": "client screenshot",
+        "description": "client screenshot",
+        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle('Warframe')[0]\n# Get the coordinates of the application window\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\n# Capture the screenshot\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')",
+        "detail": "client screenshot",
+        "documentation": {}
+    },
+    {
+        "label": "screenshot",
+        "kind": 5,
+        "importPath": "client screenshot",
+        "description": "client screenshot",
+        "peekOfCode": "screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('sssscreenshot.png')",
+        "detail": "client screenshot",
+        "documentation": {}
+    },
+    {
+        "label": "new_width",
+        "kind": 5,
+        "importPath": "client screenshot",
+        "description": "client screenshot",
+        "peekOfCode": "new_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('sssscreenshot.png')",
+        "detail": "client screenshot",
+        "documentation": {}
+    },
+    {
+        "label": "new_height",
+        "kind": 5,
+        "importPath": "client screenshot",
+        "description": "client screenshot",
+        "peekOfCode": "new_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('sssscreenshot.png')",
+        "detail": "client screenshot",
+        "documentation": {}
+    },
+    {
+        "label": "resized_screenshot",
+        "kind": 5,
+        "importPath": "client screenshot",
+        "description": "client screenshot",
+        "peekOfCode": "resized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('sssscreenshot.png')",
+        "detail": "client screenshot",
         "documentation": {}
     },
     {
