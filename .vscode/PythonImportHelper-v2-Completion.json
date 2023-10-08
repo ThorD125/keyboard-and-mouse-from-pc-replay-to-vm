@@ -1,5 +1,14 @@
 [
     {
+        "label": "keyboard",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "keyboard",
+        "description": "keyboard",
+        "detail": "keyboard",
+        "documentation": {}
+    },
+    {
         "label": "socket",
         "kind": 6,
         "isExtraImport": true,
@@ -50,15 +59,6 @@
         "importPath": "time",
         "description": "time",
         "detail": "time",
-        "documentation": {}
-    },
-    {
-        "label": "keyboard",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "keyboard",
-        "description": "keyboard",
-        "detail": "keyboard",
         "documentation": {}
     },
     {
