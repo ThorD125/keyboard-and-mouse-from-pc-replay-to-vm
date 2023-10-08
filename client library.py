@@ -1,5 +1,6 @@
 import pyautogui
 from PIL import ImageGrab
+import socket
 
 
 def take_screenshot(nameapp, namepic):
@@ -12,7 +13,11 @@ def take_screenshot(nameapp, namepic):
     resized_screenshot.save(namepic)
 
 
-
+def connect_to_server(ip, port):
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_address = (ip, port)
+    client_socket.connect(server_address)
+    return client_socket
 
 
 

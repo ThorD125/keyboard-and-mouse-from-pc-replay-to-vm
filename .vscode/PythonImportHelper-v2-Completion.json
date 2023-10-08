@@ -18,15 +18,6 @@
         "documentation": {}
     },
     {
-        "label": "tkinter",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "tkinter",
-        "description": "tkinter",
-        "detail": "tkinter",
-        "documentation": {}
-    },
-    {
         "label": "pyautogui",
         "kind": 6,
         "isExtraImport": true,
@@ -70,84 +61,20 @@
         "documentation": {}
     },
     {
-        "label": "send_pressed_signal",
-        "kind": 2,
-        "importPath": "client.client click",
-        "description": "client.client click",
-        "peekOfCode": "def send_pressed_signal():\n    client_socket.send('pressed'.encode())\n# Function to send 'released' signal to the server\ndef send_released_signal():\n    client_socket.send('released'.encode())\n# Create the main GUI window\nroot = tk.Tk()\nroot.title(\"Client\")\n# Create a button in the GUI\nbutton = tk.Button(root, text=\"Press Me\")",
-        "detail": "client.client click",
+        "label": "connect_to_server",
+        "importPath": "client_library",
+        "description": "client_library",
+        "isExtraImport": true,
+        "detail": "client_library",
         "documentation": {}
     },
     {
-        "label": "send_released_signal",
-        "kind": 2,
-        "importPath": "client.client click",
-        "description": "client.client click",
-        "peekOfCode": "def send_released_signal():\n    client_socket.send('released'.encode())\n# Create the main GUI window\nroot = tk.Tk()\nroot.title(\"Client\")\n# Create a button in the GUI\nbutton = tk.Button(root, text=\"Press Me\")\nbutton.pack()\n# Bind functions to button press and release events\nbutton.bind(\"<ButtonPress-1>\", lambda event: send_pressed_signal())",
-        "detail": "client.client click",
-        "documentation": {}
-    },
-    {
-        "label": "close_client",
-        "kind": 2,
-        "importPath": "client.client click",
-        "description": "client.client click",
-        "peekOfCode": "def close_client():\n    client_socket.close()\n    root.destroy()\n# Create a Quit button to close the client\nquit_button = tk.Button(root, text=\"Quit\", command=close_client)\nquit_button.pack()\n# Connect to the server\nclient_socket.connect((HOST, PORT))\n# Start the GUI main loop\nroot.mainloop()",
-        "detail": "client.client click",
-        "documentation": {}
-    },
-    {
-        "label": "HOST",
+        "label": "previous_state",
         "kind": 5,
-        "importPath": "client.client click",
-        "description": "client.client click",
-        "peekOfCode": "HOST = '127.0.0.1'  # Use the server's IP address or 'localhost' for testing\nPORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Function to send 'pressed' signal to the server\ndef send_pressed_signal():\n    client_socket.send('pressed'.encode())\n# Function to send 'released' signal to the server\ndef send_released_signal():\n    client_socket.send('released'.encode())",
-        "detail": "client.client click",
-        "documentation": {}
-    },
-    {
-        "label": "PORT",
-        "kind": 5,
-        "importPath": "client.client click",
-        "description": "client.client click",
-        "peekOfCode": "PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Function to send 'pressed' signal to the server\ndef send_pressed_signal():\n    client_socket.send('pressed'.encode())\n# Function to send 'released' signal to the server\ndef send_released_signal():\n    client_socket.send('released'.encode())\n# Create the main GUI window",
-        "detail": "client.client click",
-        "documentation": {}
-    },
-    {
-        "label": "client_socket",
-        "kind": 5,
-        "importPath": "client.client click",
-        "description": "client.client click",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Function to send 'pressed' signal to the server\ndef send_pressed_signal():\n    client_socket.send('pressed'.encode())\n# Function to send 'released' signal to the server\ndef send_released_signal():\n    client_socket.send('released'.encode())\n# Create the main GUI window\nroot = tk.Tk()\nroot.title(\"Client\")",
-        "detail": "client.client click",
-        "documentation": {}
-    },
-    {
-        "label": "root",
-        "kind": 5,
-        "importPath": "client.client click",
-        "description": "client.client click",
-        "peekOfCode": "root = tk.Tk()\nroot.title(\"Client\")\n# Create a button in the GUI\nbutton = tk.Button(root, text=\"Press Me\")\nbutton.pack()\n# Bind functions to button press and release events\nbutton.bind(\"<ButtonPress-1>\", lambda event: send_pressed_signal())\nbutton.bind(\"<ButtonRelease-1>\", lambda event: send_released_signal())\n# Function to close the client socket and exit the application\ndef close_client():",
-        "detail": "client.client click",
-        "documentation": {}
-    },
-    {
-        "label": "button",
-        "kind": 5,
-        "importPath": "client.client click",
-        "description": "client.client click",
-        "peekOfCode": "button = tk.Button(root, text=\"Press Me\")\nbutton.pack()\n# Bind functions to button press and release events\nbutton.bind(\"<ButtonPress-1>\", lambda event: send_pressed_signal())\nbutton.bind(\"<ButtonRelease-1>\", lambda event: send_released_signal())\n# Function to close the client socket and exit the application\ndef close_client():\n    client_socket.close()\n    root.destroy()\n# Create a Quit button to close the client",
-        "detail": "client.client click",
-        "documentation": {}
-    },
-    {
-        "label": "quit_button",
-        "kind": 5,
-        "importPath": "client.client click",
-        "description": "client.client click",
-        "peekOfCode": "quit_button = tk.Button(root, text=\"Quit\", command=close_client)\nquit_button.pack()\n# Connect to the server\nclient_socket.connect((HOST, PORT))\n# Start the GUI main loop\nroot.mainloop()",
-        "detail": "client.client click",
+        "importPath": "client.client check keys",
+        "description": "client.client check keys",
+        "peekOfCode": "previous_state = False  # Initialize the previous state of the \"x\" key\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")  # Get the current state of the \"x\" key\n    if current_state != previous_state:  # Compare current state to previous state\n        if current_state:\n            print(\"x is pressed!\")\n        else:\n            print(\"x is not pressed!\")\n    previous_state = current_state  # Update the previous state",
+        "detail": "client.client check keys",
         "documentation": {}
     },
     {
@@ -515,8 +442,26 @@
         "kind": 2,
         "importPath": "client library",
         "description": "client library",
-        "peekOfCode": "def take_screenshot(nameapp, namepic):\n    app_window = pyautogui.getWindowsWithTitle(nameapp)[0]\n    left, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\n    screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\n    new_width = screenshot.width // 2\n    new_height = screenshot.height // 2\n    resized_screenshot = screenshot.resize((new_width, new_height))\n    resized_screenshot.save(namepic)",
+        "peekOfCode": "def take_screenshot(nameapp, namepic):\n    app_window = pyautogui.getWindowsWithTitle(nameapp)[0]\n    left, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\n    screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\n    new_width = screenshot.width // 2\n    new_height = screenshot.height // 2\n    resized_screenshot = screenshot.resize((new_width, new_height))\n    resized_screenshot.save(namepic)\ndef connect_to_server(ip, port):\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)",
         "detail": "client library",
+        "documentation": {}
+    },
+    {
+        "label": "connect_to_server",
+        "kind": 2,
+        "importPath": "client library",
+        "description": "client library",
+        "peekOfCode": "def connect_to_server(ip, port):\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server_address = (ip, port)\n    client_socket.connect(server_address)\n    return client_socket",
+        "detail": "client library",
+        "documentation": {}
+    },
+    {
+        "label": "client_socket",
+        "kind": 5,
+        "importPath": "client",
+        "description": "client",
+        "peekOfCode": "client_socket = connect_to_server(\"192.168.32.156\", 12345)\nwhile True:\n    message = input(\"Enter a message to send to the server (or type 'exit' to quit): \")\n    if message == 'exit':\n        break\n    client_socket.send(message.encode('utf-8'))\nclient_socket.close()",
+        "detail": "client",
         "documentation": {}
     }
 ]
