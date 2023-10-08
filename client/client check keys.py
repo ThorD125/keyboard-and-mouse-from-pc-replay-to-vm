@@ -1,13 +1,6 @@
 import keyboard
 
 
-
-
-# while True:
-#     if keyboard.is_pressed("x"):
-#         print(f"x is pressed!")
-#     else:
-#         print(f"x is not pressed!")
 previous_state = False  # Initialize the previous state of the "x" key
 
 while True:
