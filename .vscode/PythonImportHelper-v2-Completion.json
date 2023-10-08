@@ -9,15 +9,6 @@
         "documentation": {}
     },
     {
-        "label": "keyboard",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "keyboard",
-        "description": "keyboard",
-        "detail": "keyboard",
-        "documentation": {}
-    },
-    {
         "label": "pyautogui",
         "kind": 6,
         "isExtraImport": true,
@@ -61,6 +52,15 @@
         "documentation": {}
     },
     {
+        "label": "keyboard",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "keyboard",
+        "description": "keyboard",
+        "detail": "keyboard",
+        "documentation": {}
+    },
+    {
         "label": "connect_to_server",
         "importPath": "client_library",
         "description": "client_library",
@@ -69,30 +69,11 @@
         "documentation": {}
     },
     {
-        "label": "client_socket",
-        "kind": 5,
-        "importPath": "client.client basic",
-        "description": "client.client basic",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_address = ('192.168.32.156', 12345)\nclient_socket.connect(server_address)\nwhile True:\n    message = input(\"Enter a message to send to the server (or type 'exit' to quit): \")\n    if message == 'exit':\n        break\n    client_socket.send(message.encode('utf-8'))\nclient_socket.close()",
-        "detail": "client.client basic",
-        "documentation": {}
-    },
-    {
-        "label": "server_address",
-        "kind": 5,
-        "importPath": "client.client basic",
-        "description": "client.client basic",
-        "peekOfCode": "server_address = ('192.168.32.156', 12345)\nclient_socket.connect(server_address)\nwhile True:\n    message = input(\"Enter a message to send to the server (or type 'exit' to quit): \")\n    if message == 'exit':\n        break\n    client_socket.send(message.encode('utf-8'))\nclient_socket.close()",
-        "detail": "client.client basic",
-        "documentation": {}
-    },
-    {
-        "label": "previous_state",
-        "kind": 5,
-        "importPath": "client.client check keys",
-        "description": "client.client check keys",
-        "peekOfCode": "previous_state = False  # Initialize the previous state of the \"x\" key\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")  # Get the current state of the \"x\" key\n    if current_state != previous_state:  # Compare current state to previous state\n        if current_state:\n            print(\"x is pressed!\")\n        else:\n            print(\"x is not pressed!\")\n    previous_state = current_state  # Update the previous state",
-        "detail": "client.client check keys",
+        "label": "create_server_socket",
+        "importPath": "server_library",
+        "description": "server_library",
+        "isExtraImport": true,
+        "detail": "server_library",
         "documentation": {}
     },
     {
@@ -165,60 +146,6 @@
         "description": "client.client screenshot",
         "peekOfCode": "resized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('screenshot.png')",
         "detail": "client.client screenshot",
-        "documentation": {}
-    },
-    {
-        "label": "server_socket",
-        "kind": 5,
-        "importPath": "server.server basic",
-        "description": "server.server basic",
-        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to a specific address and port\nhost = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")\n# Accept a connection from a client\nclient_socket, client_address = server_socket.accept()",
-        "detail": "server.server basic",
-        "documentation": {}
-    },
-    {
-        "label": "host",
-        "kind": 5,
-        "importPath": "server.server basic",
-        "description": "server.server basic",
-        "peekOfCode": "host = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")\n# Accept a connection from a client\nclient_socket, client_address = server_socket.accept()\nprint(f\"Accepted connection from {client_address}\")\nwhile True:",
-        "detail": "server.server basic",
-        "documentation": {}
-    },
-    {
-        "label": "port",
-        "kind": 5,
-        "importPath": "server.server basic",
-        "description": "server.server basic",
-        "peekOfCode": "port = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")\n# Accept a connection from a client\nclient_socket, client_address = server_socket.accept()\nprint(f\"Accepted connection from {client_address}\")\nwhile True:\n    # Receive data from the client",
-        "detail": "server.server basic",
-        "documentation": {}
-    },
-    {
-        "label": "HOST",
-        "kind": 5,
-        "importPath": "server.server click",
-        "description": "server.server click",
-        "peekOfCode": "HOST = '127.0.0.1'  # Use your server's IP address or 'localhost' for testing\nPORT = 12345\n# Create a socket object\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to the address and port\nserver_socket.bind((HOST, PORT))\n# Listen for incoming connections\nserver_socket.listen()\nprint(f\"Server is listening on {HOST}:{PORT}\")\n# Accept a client connection",
-        "detail": "server.server click",
-        "documentation": {}
-    },
-    {
-        "label": "PORT",
-        "kind": 5,
-        "importPath": "server.server click",
-        "description": "server.server click",
-        "peekOfCode": "PORT = 12345\n# Create a socket object\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to the address and port\nserver_socket.bind((HOST, PORT))\n# Listen for incoming connections\nserver_socket.listen()\nprint(f\"Server is listening on {HOST}:{PORT}\")\n# Accept a client connection\nclient_socket, client_address = server_socket.accept()",
-        "detail": "server.server click",
-        "documentation": {}
-    },
-    {
-        "label": "server_socket",
-        "kind": 5,
-        "importPath": "server.server click",
-        "description": "server.server click",
-        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to the address and port\nserver_socket.bind((HOST, PORT))\n# Listen for incoming connections\nserver_socket.listen()\nprint(f\"Server is listening on {HOST}:{PORT}\")\n# Accept a client connection\nclient_socket, client_address = server_socket.accept()\nprint(f\"Connected to {client_address}\")\ntry:",
-        "detail": "server.server click",
         "documentation": {}
     },
     {
@@ -438,29 +365,11 @@
         "documentation": {}
     },
     {
-        "label": "take_screenshot",
-        "kind": 2,
-        "importPath": "client library",
-        "description": "client library",
-        "peekOfCode": "def take_screenshot(nameapp, namepic):\n    app_window = pyautogui.getWindowsWithTitle(nameapp)[0]\n    left, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\n    screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\n    new_width = screenshot.width // 2\n    new_height = screenshot.height // 2\n    resized_screenshot = screenshot.resize((new_width, new_height))\n    resized_screenshot.save(namepic)\ndef connect_to_server(ip, port):\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)",
-        "detail": "client library",
-        "documentation": {}
-    },
-    {
-        "label": "connect_to_server",
-        "kind": 2,
-        "importPath": "client library",
-        "description": "client library",
-        "peekOfCode": "def connect_to_server(ip, port):\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server_address = (ip, port)\n    client_socket.connect(server_address)\n    return client_socket",
-        "detail": "client library",
-        "documentation": {}
-    },
-    {
         "label": "client_socket",
         "kind": 5,
         "importPath": "client",
         "description": "client",
-        "peekOfCode": "client_socket = connect_to_server(\"192.168.32.156\", 12345)\nprevious_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")  # Get the current state of the \"x\" key\n    if current_state != previous_state:  # Compare current state to previous state\n        if current_state:\n            message = \"press:t\"\n            client_socket.send(message.encode('utf-8'))\n        else:\n            message = \"release:t\"",
+        "peekOfCode": "client_socket = connect_to_server(\"127.0.0.1\", 12345)\nprevious_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")\n    if current_state != previous_state:\n        if current_state:\n            message = \"press:x\"\n            client_socket.send(message.encode('utf-8'))\n        else:\n            message = \"release:x\"",
         "detail": "client",
         "documentation": {}
     },
@@ -469,8 +378,44 @@
         "kind": 5,
         "importPath": "client",
         "description": "client",
-        "peekOfCode": "previous_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")  # Get the current state of the \"x\" key\n    if current_state != previous_state:  # Compare current state to previous state\n        if current_state:\n            message = \"press:t\"\n            client_socket.send(message.encode('utf-8'))\n        else:\n            message = \"release:t\"\n            client_socket.send(message.encode('utf-8'))",
+        "peekOfCode": "previous_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")\n    if current_state != previous_state:\n        if current_state:\n            message = \"press:x\"\n            client_socket.send(message.encode('utf-8'))\n        else:\n            message = \"release:x\"\n            client_socket.send(message.encode('utf-8'))",
         "detail": "client",
+        "documentation": {}
+    },
+    {
+        "label": "take_screenshot",
+        "kind": 2,
+        "importPath": "client_library",
+        "description": "client_library",
+        "peekOfCode": "def take_screenshot(nameapp, namepic):\n    app_window = pyautogui.getWindowsWithTitle(nameapp)[0]\n    left, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\n    screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\n    new_width = screenshot.width // 2\n    new_height = screenshot.height // 2\n    resized_screenshot = screenshot.resize((new_width, new_height))\n    resized_screenshot.save(namepic)\ndef connect_to_server(ip, port):\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)",
+        "detail": "client_library",
+        "documentation": {}
+    },
+    {
+        "label": "connect_to_server",
+        "kind": 2,
+        "importPath": "client_library",
+        "description": "client_library",
+        "peekOfCode": "def connect_to_server(ip, port):\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server_address = (ip, port)\n    client_socket.connect(server_address)\n    return client_socket",
+        "detail": "client_library",
+        "documentation": {}
+    },
+    {
+        "label": "server_socket",
+        "kind": 5,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "server_socket = create_server_socket('127.0.0.1', 12345)\nclient_socket, client_address = server_socket.accept()\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:\n        break  \n    print(f\"Received: {data}\")\nclient_socket.close()\nserver_socket.close()",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "create_server_socket",
+        "kind": 2,
+        "importPath": "server_library",
+        "description": "server_library",
+        "peekOfCode": "def create_server_socket(host, port):\n    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server_socket.bind((host, port))\n    server_socket.listen(5)\n    return server_socket",
+        "detail": "server_library",
         "documentation": {}
     }
 ]
