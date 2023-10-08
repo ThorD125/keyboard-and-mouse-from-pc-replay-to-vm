@@ -7,7 +7,7 @@ client_socket = connect_to_server("192.168.32.156", 12345)
 previous_state = False
 
 while True:
-    current_state = keyboard.is_pressed("x")
+    current_state = keyboard.is_pressed("w")
     if current_state != previous_state:
         if current_state:
             message = "press:w"
