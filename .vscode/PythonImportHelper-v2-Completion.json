@@ -61,7 +61,7 @@
         "documentation": {}
     },
     {
-        "label": "connect_to_server",
+        "label": "*",
         "importPath": "client_library",
         "description": "client_library",
         "isExtraImport": true,
@@ -69,7 +69,7 @@
         "documentation": {}
     },
     {
-        "label": "create_server_socket",
+        "label": "*",
         "importPath": "server_library",
         "description": "server_library",
         "isExtraImport": true,
@@ -369,7 +369,7 @@
         "kind": 5,
         "importPath": "client",
         "description": "client",
-        "peekOfCode": "client_socket = connect_to_server(\"127.0.0.1\", 12345)\nprevious_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")\n    if current_state != previous_state:\n        if current_state:\n            message = \"press:x\"\n            client_socket.send(message.encode('utf-8'))\n        else:\n            message = \"release:x\"",
+        "peekOfCode": "client_socket = connect_to_server(\"192.168.32.156\", 12345)\n# client_socket = connect_to_server(\"127.0.0.1\", 12345)\nprevious_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")\n    if current_state != previous_state:\n        if current_state:\n            message = \"press:w\"\n            client_socket.send(message.encode('utf-8'))\n        else:",
         "detail": "client",
         "documentation": {}
     },
@@ -378,7 +378,7 @@
         "kind": 5,
         "importPath": "client",
         "description": "client",
-        "peekOfCode": "previous_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")\n    if current_state != previous_state:\n        if current_state:\n            message = \"press:x\"\n            client_socket.send(message.encode('utf-8'))\n        else:\n            message = \"release:x\"\n            client_socket.send(message.encode('utf-8'))",
+        "peekOfCode": "previous_state = False\nwhile True:\n    current_state = keyboard.is_pressed(\"x\")\n    if current_state != previous_state:\n        if current_state:\n            message = \"press:w\"\n            client_socket.send(message.encode('utf-8'))\n        else:\n            message = \"release:w\"\n            client_socket.send(message.encode('utf-8'))",
         "detail": "client",
         "documentation": {}
     },
@@ -405,16 +405,34 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "server_socket = create_server_socket('127.0.0.1', 12345)\nclient_socket, client_address = server_socket.accept()\nstate = False\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:\n        break\n    print(f\"Received: {data}\")",
+        "peekOfCode": "server_socket = create_server_socket('127.0.0.1', 12345)\nclient_socket, client_address = server_socket.accept()\nwindow = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\ntime.sleep(1)\npyautogui.click(center_x, center_y)\nwhile True:",
         "detail": "server",
         "documentation": {}
     },
     {
-        "label": "state",
+        "label": "window",
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "state = False\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:\n        break\n    print(f\"Received: {data}\")\nclient_socket.close()\nserver_socket.close()",
+        "peekOfCode": "window = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\ntime.sleep(1)\npyautogui.click(center_x, center_y)\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data: ",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "center_x",
+        "kind": 5,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\ntime.sleep(1)\npyautogui.click(center_x, center_y)\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data: \n        break\n    if data == \"press:w\":\n        press(\"w\")",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "center_y",
+        "kind": 5,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "center_y = screen_height // 2\ntime.sleep(1)\npyautogui.click(center_x, center_y)\nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data: \n        break\n    if data == \"press:w\":\n        press(\"w\")\n    elif data == \"release:w\":",
         "detail": "server",
         "documentation": {}
     },
@@ -423,7 +441,25 @@
         "kind": 2,
         "importPath": "server_library",
         "description": "server_library",
-        "peekOfCode": "def create_server_socket(host, port):\n    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server_socket.bind((host, port))\n    server_socket.listen(5)\n    return server_socket",
+        "peekOfCode": "def create_server_socket(host, port):\n    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server_socket.bind((host, port))\n    server_socket.listen(5)\n    return server_socket\ndef press(button):\n    keyboard.press(button)\n    time.sleep(0.3)\ndef release(button):\n    keyboard.release(button)",
+        "detail": "server_library",
+        "documentation": {}
+    },
+    {
+        "label": "press",
+        "kind": 2,
+        "importPath": "server_library",
+        "description": "server_library",
+        "peekOfCode": "def press(button):\n    keyboard.press(button)\n    time.sleep(0.3)\ndef release(button):\n    keyboard.release(button)\n    time.sleep(0.3)",
+        "detail": "server_library",
+        "documentation": {}
+    },
+    {
+        "label": "release",
+        "kind": 2,
+        "importPath": "server_library",
+        "description": "server_library",
+        "peekOfCode": "def release(button):\n    keyboard.release(button)\n    time.sleep(0.3)",
         "detail": "server_library",
         "documentation": {}
     }
