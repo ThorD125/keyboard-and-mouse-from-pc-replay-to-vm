@@ -4,7 +4,11 @@ import time
 import keyboard
 
 def press(button):
-    keyboard.press_and_release(button)
+    keyboard.press(button)
+    time.sleep(0.3)
+
+def release(button):
+    keyboard.release(button)
     time.sleep(0.3)
 
 # Find the window by its title
@@ -23,9 +27,14 @@ center_y = screen_height // 2
 time.sleep(1)
 
 pyautogui.click(center_x, center_y)
-time.sleep(10)
+# time.sleep(1)
 
-press('t')
-press('x')
+press('w')
+
+i = 1
+while i < 10:
+    press('w')
+    i += 1
+release('w')
 
 print("done")

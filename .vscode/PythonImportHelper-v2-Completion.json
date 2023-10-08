@@ -9,6 +9,15 @@
         "documentation": {}
     },
     {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
         "label": "pyautogui",
         "kind": 6,
         "isExtraImport": true,
@@ -50,6 +59,87 @@
         "importPath": "keyboard",
         "description": "keyboard",
         "detail": "keyboard",
+        "documentation": {}
+    },
+    {
+        "label": "send_pressed_signal",
+        "kind": 2,
+        "importPath": "client click",
+        "description": "client click",
+        "peekOfCode": "def send_pressed_signal():\n    client_socket.send('pressed'.encode())\n# Function to send 'released' signal to the server\ndef send_released_signal():\n    client_socket.send('released'.encode())\n# Create the main GUI window\nroot = tk.Tk()\nroot.title(\"Client\")\n# Create a button in the GUI\nbutton = tk.Button(root, text=\"Press Me\")",
+        "detail": "client click",
+        "documentation": {}
+    },
+    {
+        "label": "send_released_signal",
+        "kind": 2,
+        "importPath": "client click",
+        "description": "client click",
+        "peekOfCode": "def send_released_signal():\n    client_socket.send('released'.encode())\n# Create the main GUI window\nroot = tk.Tk()\nroot.title(\"Client\")\n# Create a button in the GUI\nbutton = tk.Button(root, text=\"Press Me\")\nbutton.pack()\n# Bind functions to button press and release events\nbutton.bind(\"<ButtonPress-1>\", lambda event: send_pressed_signal())",
+        "detail": "client click",
+        "documentation": {}
+    },
+    {
+        "label": "close_client",
+        "kind": 2,
+        "importPath": "client click",
+        "description": "client click",
+        "peekOfCode": "def close_client():\n    client_socket.close()\n    root.destroy()\n# Create a Quit button to close the client\nquit_button = tk.Button(root, text=\"Quit\", command=close_client)\nquit_button.pack()\n# Connect to the server\nclient_socket.connect((HOST, PORT))\n# Start the GUI main loop\nroot.mainloop()",
+        "detail": "client click",
+        "documentation": {}
+    },
+    {
+        "label": "HOST",
+        "kind": 5,
+        "importPath": "client click",
+        "description": "client click",
+        "peekOfCode": "HOST = '127.0.0.1'  # Use the server's IP address or 'localhost' for testing\nPORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Function to send 'pressed' signal to the server\ndef send_pressed_signal():\n    client_socket.send('pressed'.encode())\n# Function to send 'released' signal to the server\ndef send_released_signal():\n    client_socket.send('released'.encode())",
+        "detail": "client click",
+        "documentation": {}
+    },
+    {
+        "label": "PORT",
+        "kind": 5,
+        "importPath": "client click",
+        "description": "client click",
+        "peekOfCode": "PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Function to send 'pressed' signal to the server\ndef send_pressed_signal():\n    client_socket.send('pressed'.encode())\n# Function to send 'released' signal to the server\ndef send_released_signal():\n    client_socket.send('released'.encode())\n# Create the main GUI window",
+        "detail": "client click",
+        "documentation": {}
+    },
+    {
+        "label": "client_socket",
+        "kind": 5,
+        "importPath": "client click",
+        "description": "client click",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Function to send 'pressed' signal to the server\ndef send_pressed_signal():\n    client_socket.send('pressed'.encode())\n# Function to send 'released' signal to the server\ndef send_released_signal():\n    client_socket.send('released'.encode())\n# Create the main GUI window\nroot = tk.Tk()\nroot.title(\"Client\")",
+        "detail": "client click",
+        "documentation": {}
+    },
+    {
+        "label": "root",
+        "kind": 5,
+        "importPath": "client click",
+        "description": "client click",
+        "peekOfCode": "root = tk.Tk()\nroot.title(\"Client\")\n# Create a button in the GUI\nbutton = tk.Button(root, text=\"Press Me\")\nbutton.pack()\n# Bind functions to button press and release events\nbutton.bind(\"<ButtonPress-1>\", lambda event: send_pressed_signal())\nbutton.bind(\"<ButtonRelease-1>\", lambda event: send_released_signal())\n# Function to close the client socket and exit the application\ndef close_client():",
+        "detail": "client click",
+        "documentation": {}
+    },
+    {
+        "label": "button",
+        "kind": 5,
+        "importPath": "client click",
+        "description": "client click",
+        "peekOfCode": "button = tk.Button(root, text=\"Press Me\")\nbutton.pack()\n# Bind functions to button press and release events\nbutton.bind(\"<ButtonPress-1>\", lambda event: send_pressed_signal())\nbutton.bind(\"<ButtonRelease-1>\", lambda event: send_released_signal())\n# Function to close the client socket and exit the application\ndef close_client():\n    client_socket.close()\n    root.destroy()\n# Create a Quit button to close the client",
+        "detail": "client click",
+        "documentation": {}
+    },
+    {
+        "label": "quit_button",
+        "kind": 5,
+        "importPath": "client click",
+        "description": "client click",
+        "peekOfCode": "quit_button = tk.Button(root, text=\"Quit\", command=close_client)\nquit_button.pack()\n# Connect to the server\nclient_socket.connect((HOST, PORT))\n# Start the GUI main loop\nroot.mainloop()",
+        "detail": "client click",
         "documentation": {}
     },
     {
@@ -170,6 +260,33 @@
         "documentation": {}
     },
     {
+        "label": "HOST",
+        "kind": 5,
+        "importPath": "server click",
+        "description": "server click",
+        "peekOfCode": "HOST = '127.0.0.1'  # Use your server's IP address or 'localhost' for testing\nPORT = 12345\n# Create a socket object\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to the address and port\nserver_socket.bind((HOST, PORT))\n# Listen for incoming connections\nserver_socket.listen()\nprint(f\"Server is listening on {HOST}:{PORT}\")\n# Accept a client connection",
+        "detail": "server click",
+        "documentation": {}
+    },
+    {
+        "label": "PORT",
+        "kind": 5,
+        "importPath": "server click",
+        "description": "server click",
+        "peekOfCode": "PORT = 12345\n# Create a socket object\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to the address and port\nserver_socket.bind((HOST, PORT))\n# Listen for incoming connections\nserver_socket.listen()\nprint(f\"Server is listening on {HOST}:{PORT}\")\n# Accept a client connection\nclient_socket, client_address = server_socket.accept()",
+        "detail": "server click",
+        "documentation": {}
+    },
+    {
+        "label": "server_socket",
+        "kind": 5,
+        "importPath": "server click",
+        "description": "server click",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to the address and port\nserver_socket.bind((HOST, PORT))\n# Listen for incoming connections\nserver_socket.listen()\nprint(f\"Server is listening on {HOST}:{PORT}\")\n# Accept a client connection\nclient_socket, client_address = server_socket.accept()\nprint(f\"Connected to {client_address}\")\ntry:",
+        "detail": "server click",
+        "documentation": {}
+    },
+    {
         "label": "SERVER_HOST",
         "kind": 5,
         "importPath": "server pic",
@@ -219,7 +336,7 @@
         "kind": 5,
         "importPath": "server send key x",
         "description": "server send key x",
-        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(10)\npress('x')\nprint(\"done\")",
+        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(10)\npress('t')\npress('x')\nprint(\"done\")",
         "detail": "server send key x",
         "documentation": {}
     },
@@ -228,7 +345,7 @@
         "kind": 5,
         "importPath": "server send key x",
         "description": "server send key x",
-        "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(10)\npress('x')\nprint(\"done\")",
+        "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(10)\npress('t')\npress('x')\nprint(\"done\")",
         "detail": "server send key x",
         "documentation": {}
     },
@@ -266,6 +383,60 @@
         "description": "server send key",
         "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(1)\npress('x')\nprint(\"done\")",
         "detail": "server send key",
+        "documentation": {}
+    },
+    {
+        "label": "press",
+        "kind": 2,
+        "importPath": "server send move key x",
+        "description": "server send move key x",
+        "peekOfCode": "def press(button):\n    keyboard.press(button)\n    time.sleep(0.3)\ndef release(button):\n    keyboard.release(button)\n    time.sleep(0.3)\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()",
+        "detail": "server send move key x",
+        "documentation": {}
+    },
+    {
+        "label": "release",
+        "kind": 2,
+        "importPath": "server send move key x",
+        "description": "server send move key x",
+        "peekOfCode": "def release(button):\n    keyboard.release(button)\n    time.sleep(0.3)\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates",
+        "detail": "server send move key x",
+        "documentation": {}
+    },
+    {
+        "label": "window",
+        "kind": 5,
+        "importPath": "server send move key x",
+        "description": "server send move key x",
+        "peekOfCode": "window = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)",
+        "detail": "server send move key x",
+        "documentation": {}
+    },
+    {
+        "label": "center_x",
+        "kind": 5,
+        "importPath": "server send move key x",
+        "description": "server send move key x",
+        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\n# time.sleep(1)\npress('w')\ni = 1\nwhile i < 10:\n    press('w')",
+        "detail": "server send move key x",
+        "documentation": {}
+    },
+    {
+        "label": "center_y",
+        "kind": 5,
+        "importPath": "server send move key x",
+        "description": "server send move key x",
+        "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\n# time.sleep(1)\npress('w')\ni = 1\nwhile i < 10:\n    press('w')\n    i += 1",
+        "detail": "server send move key x",
+        "documentation": {}
+    },
+    {
+        "label": "i",
+        "kind": 5,
+        "importPath": "server send move key x",
+        "description": "server send move key x",
+        "peekOfCode": "i = 1\nwhile i < 10:\n    press('w')\n    i += 1\nrelease('w')\nprint(\"done\")",
+        "detail": "server send move key x",
         "documentation": {}
     },
     {
