@@ -34,14 +34,6 @@
         "documentation": {}
     },
     {
-        "label": "ImageGrab",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
         "label": "io",
         "kind": 6,
         "isExtraImport": true,
@@ -51,21 +43,21 @@
         "documentation": {}
     },
     {
-        "label": "pygetwindow",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pygetwindow",
-        "description": "pygetwindow",
-        "detail": "pygetwindow",
-        "documentation": {}
-    },
-    {
         "label": "time",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "time",
         "description": "time",
         "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "pygetwindow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygetwindow",
+        "description": "pygetwindow",
+        "detail": "pygetwindow",
         "documentation": {}
     },
     {
@@ -91,33 +83,6 @@
         "description": "server_library",
         "isExtraImport": true,
         "detail": "server_library",
-        "documentation": {}
-    },
-    {
-        "label": "SERVER_HOST",
-        "kind": 5,
-        "importPath": "client.client pic",
-        "description": "client.client pic",
-        "peekOfCode": "SERVER_HOST = '127.0.0.1'  # Replace with the server's IP address or hostname\nSERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\n# Send the picture data to the server\nwith open(\"clientscreenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:",
-        "detail": "client.client pic",
-        "documentation": {}
-    },
-    {
-        "label": "SERVER_PORT",
-        "kind": 5,
-        "importPath": "client.client pic",
-        "description": "client.client pic",
-        "peekOfCode": "SERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\n# Send the picture data to the server\nwith open(\"clientscreenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:\n        client_socket.send(data)",
-        "detail": "client.client pic",
-        "documentation": {}
-    },
-    {
-        "label": "client_socket",
-        "kind": 5,
-        "importPath": "client.client pic",
-        "description": "client.client pic",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\n# Send the picture data to the server\nwith open(\"clientscreenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:\n        client_socket.send(data)\n        data = file.read(1024)\nprint(\"[+] Picture sent to the server.\")",
-        "detail": "client.client pic",
         "documentation": {}
     },
     {
@@ -208,51 +173,6 @@
         "description": "client.client screenpic",
         "peekOfCode": "image_data = image_stream.getvalue()\n# Send the image data to the server\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\n# Close the socket\nclient_socket.close()",
         "detail": "client.client screenpic",
-        "documentation": {}
-    },
-    {
-        "label": "app_window",
-        "kind": 5,
-        "importPath": "client.client screenshot",
-        "description": "client.client screenshot",
-        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle('Warframe')[0]\n# Get the coordinates of the application window\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\n# Capture the screenshot\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')",
-        "detail": "client.client screenshot",
-        "documentation": {}
-    },
-    {
-        "label": "screenshot",
-        "kind": 5,
-        "importPath": "client.client screenshot",
-        "description": "client.client screenshot",
-        "peekOfCode": "screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('screenshot.png')",
-        "detail": "client.client screenshot",
-        "documentation": {}
-    },
-    {
-        "label": "new_width",
-        "kind": 5,
-        "importPath": "client.client screenshot",
-        "description": "client.client screenshot",
-        "peekOfCode": "new_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('screenshot.png')",
-        "detail": "client.client screenshot",
-        "documentation": {}
-    },
-    {
-        "label": "new_height",
-        "kind": 5,
-        "importPath": "client.client screenshot",
-        "description": "client.client screenshot",
-        "peekOfCode": "new_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('screenshot.png')",
-        "detail": "client.client screenshot",
-        "documentation": {}
-    },
-    {
-        "label": "resized_screenshot",
-        "kind": 5,
-        "importPath": "client.client screenshot",
-        "description": "client.client screenshot",
-        "peekOfCode": "resized_screenshot = screenshot.resize((new_width, new_height))\n# Replace 'screenshot.png' with the desired file name and format\n# screenshot.save('screenshot.png')\nresized_screenshot.save('screenshot.png')",
-        "detail": "client.client screenshot",
         "documentation": {}
     },
     {

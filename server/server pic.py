@@ -19,11 +19,16 @@ client_socket, client_address = server_socket.accept()
 print(f"[*] Accepted connection from {client_address[0]}:{client_address[1]}")
 
 # Receive the picture data from the client and save it to a file
-with open("received_picture.png", "wb") as file:
-    while True:
-        data = client_socket.recv(1024)
-        if not data:
-            break
+
+import time
+
+while True:
+    data = client_socket.recv(1024)
+    if not data:
+        break
+
+    timestamp = time.time()
+    with open("{timestamp}.png", "wb") as file:
         file.write(data)
 
 print("[+] Picture received and saved.")
