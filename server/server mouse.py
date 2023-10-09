@@ -27,16 +27,14 @@ def main():
 
             # Receive the actual message data
             data = client_socket.recv(message_length).decode('utf-8')
-            print(data)
             
-            # Split data into x and y coordinates
-            # coords = data.split(',')
-            # if len(coords) == 2:
-            #     x, y = coords[0], coords[1]
-            #     print(f"Received: {x}, {y}")
-            #     # pyautogui.moveTo(int(x), int(y))
-            # else:
-            #     print(f"Received unexpected data: {data}")
+            coords = data.split(',')
+            if len(coords) == 2:
+                x, y = coords[0], coords[1]
+                print(f"Received: {x}, {y}")
+                # pyautogui.moveTo(int(x), int(y))
+            else:
+                print(f"Received unexpected data: {data}")
 
     except Exception as e:
         print(f"Error: {e}")
