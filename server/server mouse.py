@@ -19,9 +19,7 @@ def main():
     client_socket, addr = server_socket.accept()
     print(f"Connection from {addr}")
 
-
-    previous_mouse_x = None
-    previous_mouse_y = None
+    processing_packets = True  # Flag to control packet processing
 
     try:
         while True:
@@ -29,29 +27,32 @@ def main():
             if not serverinput:
                 break
             
-            # print(data)
-            # # Unpack the message length
             message_length = struct.unpack('!I', serverinput)[0]
-
-            # Receive the actual message data
             data = client_socket.recv(message_length).decode('utf-8')
             
             coords = data.split(',')
             if len(coords) == 2:
                 x, y = coords[0], coords[1]
-                print(f"Received: {x}, {y}")    
-                pyautogui.moveTo(int(x), int(y), 0)
-                # pyautogui.mouseDown()
-                # time.sleep(0.01)
-                # pyautogui.mouseUp()
+                print(f"Received: {x}, {y}")
 
+                if processing_packets:
+                    pyautogui.moveTo(int(x), int(y), 0)
             else:
                 print(f"Received unexpected data: {data}")
+
+            # Add logic to temporarily disable packet processing during mouse movements
+            if pyautogui._pyautogui_x != previous_mouse_x or pyautogui._pyautogui_y != previous_mouse_y:
+                print("Mouse is moving, pausing packet processing...")
+                processing_packets = False
+            else:
+                processing_packets = True
+
+            previous_mouse_x = pyautogui._pyautogui_x
+            previous_mouse_y = pyautogui._pyautogui_y
 
     except Exception as e:
         print(f"Error: {e}")
     finally:
-        # pyautogui.mouseUp()
         client_socket.close()
         server_socket.close()
 
