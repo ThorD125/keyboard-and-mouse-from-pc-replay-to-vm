@@ -21,7 +21,9 @@ def main():
             data = f"{x},{y}"
 
             if data != previous_mouse_pos:
-                
+                # message = struct.pack('!I', len(data)) + data.encode('utf-8')
+                # client_socket.sendall(message)
+
                 if previous_mouse_x != None and previous_mouse_y != None:
                     if not((int(previous_mouse_x)-marge_mouse_px < int(x) < int(previous_mouse_x)+marge_mouse_px)) and not((int(previous_mouse_y)-marge_mouse_px < int(y) < int(previous_mouse_y)+marge_mouse_px)):
                         previous_mouse_x = x

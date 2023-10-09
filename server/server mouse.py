@@ -40,10 +40,10 @@ def main():
             if len(coords) == 2:
                 x, y = coords[0], coords[1]
                 print(f"Received: {x}, {y}")    
-                pyautogui.mouseDown()
-                pyautogui.moveTo(int(x), int(y))
-                time.sleep(0.01)
-                pyautogui.mouseUp()
+                pyautogui.moveTo(int(x), int(y), 0)
+                # pyautogui.mouseDown()
+                # time.sleep(0.01)
+                # pyautogui.mouseUp()
 
             else:
                 print(f"Received unexpected data: {data}")
