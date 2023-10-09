@@ -43,6 +43,14 @@
         "documentation": {}
     },
     {
+        "label": "app_window",
+        "importPath": "client.client screenpic",
+        "description": "client.client screenpic",
+        "isExtraImport": true,
+        "detail": "client.client screenpic",
+        "documentation": {}
+    },
+    {
         "label": "time",
         "kind": 6,
         "isExtraImport": true,
@@ -90,7 +98,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "SERVER_HOST = '127.0.0.1'  # Replace with the server's IP address or hostname\nSERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2",
+        "peekOfCode": "SERVER_HOST = '127.0.0.1'  # Replace with the server's IP address or hostname\nSERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -99,7 +107,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "SERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2",
+        "peekOfCode": "SERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -108,7 +116,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Create an in-memory binary stream",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -117,7 +125,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle('Notepad')[0]\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Create an in-memory binary stream\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()",
+        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Create an in-memory binary stream\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')",
         "detail": "client.client screenpic",
         "documentation": {}
     },

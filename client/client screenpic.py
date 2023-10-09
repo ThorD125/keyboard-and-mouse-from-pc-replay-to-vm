@@ -2,6 +2,7 @@ import socket
 import pyautogui
 from PIL import ImageGrab
 import io
+from client.client screenpic import app_window
 
 # Define server address and port
 SERVER_HOST = '127.0.0.1'  # Replace with the server's IP address or hostname
@@ -14,6 +15,8 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((SERVER_HOST, SERVER_PORT))
 
 app_window = pyautogui.getWindowsWithTitle('Notepad')[0]
+
+app_window.activate()
 
 left, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom
 screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))
