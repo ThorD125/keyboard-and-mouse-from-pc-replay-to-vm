@@ -34,6 +34,14 @@
         "documentation": {}
     },
     {
+        "label": "ImageGrab",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
         "label": "pygetwindow",
         "kind": 6,
         "isExtraImport": true,
@@ -101,6 +109,78 @@
         "description": "client.client pic",
         "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\n# Send the picture data to the server\nwith open(\"clientscreenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:\n        client_socket.send(data)\n        data = file.read(1024)\nprint(\"[+] Picture sent to the server.\")",
         "detail": "client.client pic",
+        "documentation": {}
+    },
+    {
+        "label": "SERVER_HOST",
+        "kind": 5,
+        "importPath": "client.client screenpic",
+        "description": "client.client screenpic",
+        "peekOfCode": "SERVER_HOST = '127.0.0.1'  # Replace with the server's IP address or hostname\nSERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2",
+        "detail": "client.client screenpic",
+        "documentation": {}
+    },
+    {
+        "label": "SERVER_PORT",
+        "kind": 5,
+        "importPath": "client.client screenpic",
+        "description": "client.client screenpic",
+        "peekOfCode": "SERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2",
+        "detail": "client.client screenpic",
+        "documentation": {}
+    },
+    {
+        "label": "client_socket",
+        "kind": 5,
+        "importPath": "client.client screenpic",
+        "description": "client.client screenpic",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nresized_screenshot.save('screenshot.png')",
+        "detail": "client.client screenpic",
+        "documentation": {}
+    },
+    {
+        "label": "app_window",
+        "kind": 5,
+        "importPath": "client.client screenpic",
+        "description": "client.client screenpic",
+        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle('Notepad')[0]\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nresized_screenshot.save('screenshot.png')\nwith open(\"screenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:",
+        "detail": "client.client screenpic",
+        "documentation": {}
+    },
+    {
+        "label": "screenshot",
+        "kind": 5,
+        "importPath": "client.client screenpic",
+        "description": "client.client screenpic",
+        "peekOfCode": "screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nresized_screenshot.save('screenshot.png')\nwith open(\"screenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:\n        client_socket.send(data)\n        data = file.read(1024)",
+        "detail": "client.client screenpic",
+        "documentation": {}
+    },
+    {
+        "label": "new_width",
+        "kind": 5,
+        "importPath": "client.client screenpic",
+        "description": "client.client screenpic",
+        "peekOfCode": "new_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nresized_screenshot.save('screenshot.png')\nwith open(\"screenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:\n        client_socket.send(data)\n        data = file.read(1024)\nprint(\"[+] Picture sent to the server.\")",
+        "detail": "client.client screenpic",
+        "documentation": {}
+    },
+    {
+        "label": "new_height",
+        "kind": 5,
+        "importPath": "client.client screenpic",
+        "description": "client.client screenpic",
+        "peekOfCode": "new_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nresized_screenshot.save('screenshot.png')\nwith open(\"screenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:\n        client_socket.send(data)\n        data = file.read(1024)\nprint(\"[+] Picture sent to the server.\")\n# Close the socket",
+        "detail": "client.client screenpic",
+        "documentation": {}
+    },
+    {
+        "label": "resized_screenshot",
+        "kind": 5,
+        "importPath": "client.client screenpic",
+        "description": "client.client screenpic",
+        "peekOfCode": "resized_screenshot = screenshot.resize((new_width, new_height))\nresized_screenshot.save('screenshot.png')\nwith open(\"screenshot.png\", \"rb\") as file:\n    data = file.read(1024)\n    while data:\n        client_socket.send(data)\n        data = file.read(1024)\nprint(\"[+] Picture sent to the server.\")\n# Close the socket\nclient_socket.close()",
+        "detail": "client.client screenpic",
         "documentation": {}
     },
     {
@@ -209,159 +289,6 @@
         "description": "server.server send key x",
         "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(10)\npress('t')\npress('x')\nprint(\"done\")",
         "detail": "server.server send key x",
-        "documentation": {}
-    },
-    {
-        "label": "press",
-        "kind": 2,
-        "importPath": "server.server send key",
-        "description": "server.server send key",
-        "peekOfCode": "def press(button):\n    keyboard.press_and_release(button)\n    time.sleep(0.3)\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates",
-        "detail": "server.server send key",
-        "documentation": {}
-    },
-    {
-        "label": "window",
-        "kind": 5,
-        "importPath": "server.server send key",
-        "description": "server.server send key",
-        "peekOfCode": "window = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)",
-        "detail": "server.server send key",
-        "documentation": {}
-    },
-    {
-        "label": "center_x",
-        "kind": 5,
-        "importPath": "server.server send key",
-        "description": "server.server send key",
-        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(1)\npress('x')\nprint(\"done\")",
-        "detail": "server.server send key",
-        "documentation": {}
-    },
-    {
-        "label": "center_y",
-        "kind": 5,
-        "importPath": "server.server send key",
-        "description": "server.server send key",
-        "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(1)\npress('x')\nprint(\"done\")",
-        "detail": "server.server send key",
-        "documentation": {}
-    },
-    {
-        "label": "press",
-        "kind": 2,
-        "importPath": "server.server send move key x",
-        "description": "server.server send move key x",
-        "peekOfCode": "def press(button):\n    keyboard.press(button)\n    time.sleep(0.3)\ndef release(button):\n    keyboard.release(button)\n    time.sleep(0.3)\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()",
-        "detail": "server.server send move key x",
-        "documentation": {}
-    },
-    {
-        "label": "release",
-        "kind": 2,
-        "importPath": "server.server send move key x",
-        "description": "server.server send move key x",
-        "peekOfCode": "def release(button):\n    keyboard.release(button)\n    time.sleep(0.3)\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates",
-        "detail": "server.server send move key x",
-        "documentation": {}
-    },
-    {
-        "label": "window",
-        "kind": 5,
-        "importPath": "server.server send move key x",
-        "description": "server.server send move key x",
-        "peekOfCode": "window = gw.getWindowsWithTitle(\"Warframe\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)",
-        "detail": "server.server send move key x",
-        "documentation": {}
-    },
-    {
-        "label": "center_x",
-        "kind": 5,
-        "importPath": "server.server send move key x",
-        "description": "server.server send move key x",
-        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\n# time.sleep(1)\npress('w')\ni = 1\nwhile i < 10:\n    press('w')",
-        "detail": "server.server send move key x",
-        "documentation": {}
-    },
-    {
-        "label": "center_y",
-        "kind": 5,
-        "importPath": "server.server send move key x",
-        "description": "server.server send move key x",
-        "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\n# time.sleep(1)\npress('w')\ni = 1\nwhile i < 10:\n    press('w')\n    i += 1",
-        "detail": "server.server send move key x",
-        "documentation": {}
-    },
-    {
-        "label": "i",
-        "kind": 5,
-        "importPath": "server.server send move key x",
-        "description": "server.server send move key x",
-        "peekOfCode": "i = 1\nwhile i < 10:\n    press('w')\n    i += 1\nrelease('w')\nprint(\"done\")",
-        "detail": "server.server send move key x",
-        "documentation": {}
-    },
-    {
-        "label": "press",
-        "kind": 2,
-        "importPath": "server.server together",
-        "description": "server.server together",
-        "peekOfCode": "def press(button):\n    keyboard.press_and_release(button)\n    time.sleep(0.3)\n# Create a socket object\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to a specific address and port\nhost = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Find the window by its title",
-        "detail": "server.server together",
-        "documentation": {}
-    },
-    {
-        "label": "server_socket",
-        "kind": 5,
-        "importPath": "server.server together",
-        "description": "server.server together",
-        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Bind the socket to a specific address and port\nhost = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# window = gw.getWindowsWithTitle(\"Notepad\")[0]\n# Activate the window\nwindow.activate()",
-        "detail": "server.server together",
-        "documentation": {}
-    },
-    {
-        "label": "host",
-        "kind": 5,
-        "importPath": "server.server together",
-        "description": "server.server together",
-        "peekOfCode": "host = '192.168.32.156'  # Loopback address for localhost\nport = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# window = gw.getWindowsWithTitle(\"Notepad\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()",
-        "detail": "server.server together",
-        "documentation": {}
-    },
-    {
-        "label": "port",
-        "kind": 5,
-        "importPath": "server.server together",
-        "description": "server.server together",
-        "peekOfCode": "port = 12345  # You can use any available port\nserver_socket.bind((host, port))\n# Find the window by its title\nwindow = gw.getWindowsWithTitle(\"Warframe\")[0]\n# window = gw.getWindowsWithTitle(\"Notepad\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates",
-        "detail": "server.server together",
-        "documentation": {}
-    },
-    {
-        "label": "window",
-        "kind": 5,
-        "importPath": "server.server together",
-        "description": "server.server together",
-        "peekOfCode": "window = gw.getWindowsWithTitle(\"Warframe\")[0]\n# window = gw.getWindowsWithTitle(\"Notepad\")[0]\n# Activate the window\nwindow.activate()\n# Get the screen size\nscreen_width, screen_height = pyautogui.size()\n# Calculate the center coordinates\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen",
-        "detail": "server.server together",
-        "documentation": {}
-    },
-    {
-        "label": "center_x",
-        "kind": 5,
-        "importPath": "server.server together",
-        "description": "server.server together",
-        "peekOfCode": "center_x = screen_width // 2\ncenter_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(1)\n# press('t')\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")",
-        "detail": "server.server together",
-        "documentation": {}
-    },
-    {
-        "label": "center_y",
-        "kind": 5,
-        "importPath": "server.server together",
-        "description": "server.server together",
-        "peekOfCode": "center_y = screen_height // 2\n# Click at the center of the screen\ntime.sleep(1)\npyautogui.click(center_x, center_y)\ntime.sleep(1)\n# press('t')\n# Listen for incoming connections\nserver_socket.listen(5)\nprint(f\"Server listening on {host}:{port}\")\n# Accept a connection from a client",
-        "detail": "server.server together",
         "documentation": {}
     },
     {
