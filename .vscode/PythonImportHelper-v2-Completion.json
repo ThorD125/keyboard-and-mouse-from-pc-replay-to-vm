@@ -18,6 +18,15 @@
         "documentation": {}
     },
     {
+        "label": "struct",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "struct",
+        "description": "struct",
+        "detail": "struct",
+        "documentation": {}
+    },
+    {
         "label": "ImageGrab",
         "importPath": "PIL",
         "description": "PIL",
@@ -52,24 +61,6 @@
         "documentation": {}
     },
     {
-        "label": "cv2",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "cv2",
-        "description": "cv2",
-        "detail": "cv2",
-        "documentation": {}
-    },
-    {
-        "label": "numpy",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
-        "documentation": {}
-    },
-    {
         "label": "pygetwindow",
         "kind": 6,
         "isExtraImport": true,
@@ -88,6 +79,24 @@
         "documentation": {}
     },
     {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "client_library",
         "description": "client_library",
@@ -101,6 +110,15 @@
         "description": "server_library",
         "isExtraImport": true,
         "detail": "server_library",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "client.client mouse",
+        "description": "client.client mouse",
+        "peekOfCode": "def main():\n    # host = '127.0.0.1'\n    host = '192.168.32.156'\n    port = 12345\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((host, port))\n    previous_mouse_pos = None\n    try:\n        while True:\n            x, y = pyautogui.position()",
+        "detail": "client.client mouse",
         "documentation": {}
     },
     {
@@ -194,66 +212,12 @@
         "documentation": {}
     },
     {
-        "label": "image1",
-        "kind": 5,
-        "importPath": "server.checkpics",
-        "description": "server.checkpics",
-        "peekOfCode": "image1 = cv2.imread('recieved/first.png')\nimage2 = cv2.imread('recieved/right.png')\n# Convert the images to grayscale for easier comparison\ngray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)\ngray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)",
-        "detail": "server.checkpics",
-        "documentation": {}
-    },
-    {
-        "label": "image2",
-        "kind": 5,
-        "importPath": "server.checkpics",
-        "description": "server.checkpics",
-        "peekOfCode": "image2 = cv2.imread('recieved/right.png')\n# Convert the images to grayscale for easier comparison\ngray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)\ngray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)",
-        "detail": "server.checkpics",
-        "documentation": {}
-    },
-    {
-        "label": "gray1",
-        "kind": 5,
-        "importPath": "server.checkpics",
-        "description": "server.checkpics",
-        "peekOfCode": "gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)\ngray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)",
-        "detail": "server.checkpics",
-        "documentation": {}
-    },
-    {
-        "label": "gray2",
-        "kind": 5,
-        "importPath": "server.checkpics",
-        "description": "server.checkpics",
-        "peekOfCode": "gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n# Initialize an empty list to store the mouse movement",
-        "detail": "server.checkpics",
-        "documentation": {}
-    },
-    {
-        "label": "diff",
-        "kind": 5,
-        "importPath": "server.checkpics",
-        "description": "server.checkpics",
-        "peekOfCode": "diff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n# Initialize an empty list to store the mouse movement\nmouse_movement = []\n# Iterate through the detected contours (representing movement)",
-        "detail": "server.checkpics",
-        "documentation": {}
-    },
-    {
-        "label": "threshold",
-        "kind": 5,
-        "importPath": "server.checkpics",
-        "description": "server.checkpics",
-        "peekOfCode": "threshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n# Initialize an empty list to store the mouse movement\nmouse_movement = []\n# Iterate through the detected contours (representing movement)\nfor contour in contours:\n    # Calculate the centroid of the contour (potential mouse movement)",
-        "detail": "server.checkpics",
-        "documentation": {}
-    },
-    {
-        "label": "mouse_movement",
-        "kind": 5,
-        "importPath": "server.checkpics",
-        "description": "server.checkpics",
-        "peekOfCode": "mouse_movement = []\n# Iterate through the detected contours (representing movement)\nfor contour in contours:\n    # Calculate the centroid of the contour (potential mouse movement)\n    M = cv2.moments(contour)\n    if M[\"m00\"] != 0:\n        cx = int(M[\"m10\"] / M[\"m00\"])\n        cy = int(M[\"m01\"] / M[\"m00\"])\n        mouse_movement.append((cx, cy))\n# Print the detected mouse movement",
-        "detail": "server.checkpics",
+        "label": "main",
+        "kind": 2,
+        "importPath": "server.server mouse",
+        "description": "server.server mouse",
+        "peekOfCode": "def main():\n    host = '0.0.0.0'  # Listen on all available network interfaces\n    port = 12345  # Port for communication\n    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server_socket.bind((host, port))\n    server_socket.listen(1)  # Listen for one connection at a time\n    print(f\"Server listening on {host}:{port}\")\n    client_socket, addr = server_socket.accept()\n    print(f\"Connection from {addr}\")\n    try:",
+        "detail": "server.server mouse",
         "documentation": {}
     },
     {
@@ -329,6 +293,69 @@
         "documentation": {}
     },
     {
+        "label": "image1",
+        "kind": 5,
+        "importPath": "server.servercheckpics",
+        "description": "server.servercheckpics",
+        "peekOfCode": "image1 = cv2.imread('recieved/first.png')\nimage2 = cv2.imread('recieved/right.png')\n# Convert the images to grayscale for easier comparison\ngray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)\ngray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)",
+        "detail": "server.servercheckpics",
+        "documentation": {}
+    },
+    {
+        "label": "image2",
+        "kind": 5,
+        "importPath": "server.servercheckpics",
+        "description": "server.servercheckpics",
+        "peekOfCode": "image2 = cv2.imread('recieved/right.png')\n# Convert the images to grayscale for easier comparison\ngray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)\ngray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)",
+        "detail": "server.servercheckpics",
+        "documentation": {}
+    },
+    {
+        "label": "gray1",
+        "kind": 5,
+        "importPath": "server.servercheckpics",
+        "description": "server.servercheckpics",
+        "peekOfCode": "gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)\ngray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)",
+        "detail": "server.servercheckpics",
+        "documentation": {}
+    },
+    {
+        "label": "gray2",
+        "kind": 5,
+        "importPath": "server.servercheckpics",
+        "description": "server.servercheckpics",
+        "peekOfCode": "gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n# Initialize an empty list to store the mouse movement",
+        "detail": "server.servercheckpics",
+        "documentation": {}
+    },
+    {
+        "label": "diff",
+        "kind": 5,
+        "importPath": "server.servercheckpics",
+        "description": "server.servercheckpics",
+        "peekOfCode": "diff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n# Initialize an empty list to store the mouse movement\nmouse_movement = []\n# Iterate through the detected contours (representing movement)",
+        "detail": "server.servercheckpics",
+        "documentation": {}
+    },
+    {
+        "label": "threshold",
+        "kind": 5,
+        "importPath": "server.servercheckpics",
+        "description": "server.servercheckpics",
+        "peekOfCode": "threshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n# Initialize an empty list to store the mouse movement\nmouse_movement = []\n# Iterate through the detected contours (representing movement)\nfor contour in contours:\n    # Calculate the centroid of the contour (potential mouse movement)",
+        "detail": "server.servercheckpics",
+        "documentation": {}
+    },
+    {
+        "label": "mouse_movement",
+        "kind": 5,
+        "importPath": "server.servercheckpics",
+        "description": "server.servercheckpics",
+        "peekOfCode": "mouse_movement = []\n# Iterate through the detected contours (representing movement)\nfor contour in contours:\n    # Calculate the centroid of the contour (potential mouse movement)\n    M = cv2.moments(contour)\n    if M[\"m00\"] != 0:\n        cx = int(M[\"m10\"] / M[\"m00\"])\n        cy = int(M[\"m01\"] / M[\"m00\"])\n        mouse_movement.append((cx, cy))\n# Print the detected mouse movement",
+        "detail": "server.servercheckpics",
+        "documentation": {}
+    },
+    {
         "label": "client_socket",
         "kind": 5,
         "importPath": "client",
@@ -378,7 +405,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "server_socket = create_server_socket('192.168.32.156', 12345)\n# server_socket = create_server_socket('127.0.0.1', 12345)\nwindow = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\n# window = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    ",
+        "peekOfCode": "server_socket = create_server_socket('192.168.32.156', 12345)\n# server_socket = create_server_socket('127.0.0.1', 12345)\n# window = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\nwindow = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    ",
         "detail": "server",
         "documentation": {}
     },
@@ -387,7 +414,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "window = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\n# window = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    \nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')",
+        "peekOfCode": "window = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    \nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:",
         "detail": "server",
         "documentation": {}
     },
