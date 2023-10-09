@@ -16,7 +16,7 @@ print(f"[*] Accepted connection from {client_address[0]}:{client_address[1]}")
 
 timestamp = time.time()
 
-with open(f"{timestamp}.png", "wb") as file:
+with open(f"recieved/{timestamp}.png", "wb") as file:
     while True:
         data = client_socket.recv(1024)
         if not data:

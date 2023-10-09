@@ -180,7 +180,7 @@
         "kind": 5,
         "importPath": "server.server pic",
         "description": "server.server pic",
-        "peekOfCode": "SERVER_HOST = '127.0.0.1'\nSERVER_PORT = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((SERVER_HOST, SERVER_PORT))\nserver_socket.listen(5)\nprint(f\"[*] Listening on {SERVER_HOST}:{SERVER_PORT}\")\nclient_socket, client_address = server_socket.accept()\nprint(f\"[*] Accepted connection from {client_address[0]}:{client_address[1]}\")\ntimestamp = time.time()\nwith open(f\"{timestamp}.png\", \"wb\") as file:",
+        "peekOfCode": "SERVER_HOST = '127.0.0.1'\nSERVER_PORT = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((SERVER_HOST, SERVER_PORT))\nserver_socket.listen(5)\nprint(f\"[*] Listening on {SERVER_HOST}:{SERVER_PORT}\")\nclient_socket, client_address = server_socket.accept()\nprint(f\"[*] Accepted connection from {client_address[0]}:{client_address[1]}\")\ntimestamp = time.time()\nwith open(f\"recieved/{timestamp}.png\", \"wb\") as file:",
         "detail": "server.server pic",
         "documentation": {}
     },
@@ -189,7 +189,7 @@
         "kind": 5,
         "importPath": "server.server pic",
         "description": "server.server pic",
-        "peekOfCode": "SERVER_PORT = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((SERVER_HOST, SERVER_PORT))\nserver_socket.listen(5)\nprint(f\"[*] Listening on {SERVER_HOST}:{SERVER_PORT}\")\nclient_socket, client_address = server_socket.accept()\nprint(f\"[*] Accepted connection from {client_address[0]}:{client_address[1]}\")\ntimestamp = time.time()\nwith open(f\"{timestamp}.png\", \"wb\") as file:\n    while True:",
+        "peekOfCode": "SERVER_PORT = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((SERVER_HOST, SERVER_PORT))\nserver_socket.listen(5)\nprint(f\"[*] Listening on {SERVER_HOST}:{SERVER_PORT}\")\nclient_socket, client_address = server_socket.accept()\nprint(f\"[*] Accepted connection from {client_address[0]}:{client_address[1]}\")\ntimestamp = time.time()\nwith open(f\"recieved/{timestamp}.png\", \"wb\") as file:\n    while True:",
         "detail": "server.server pic",
         "documentation": {}
     },
@@ -198,7 +198,7 @@
         "kind": 5,
         "importPath": "server.server pic",
         "description": "server.server pic",
-        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((SERVER_HOST, SERVER_PORT))\nserver_socket.listen(5)\nprint(f\"[*] Listening on {SERVER_HOST}:{SERVER_PORT}\")\nclient_socket, client_address = server_socket.accept()\nprint(f\"[*] Accepted connection from {client_address[0]}:{client_address[1]}\")\ntimestamp = time.time()\nwith open(f\"{timestamp}.png\", \"wb\") as file:\n    while True:\n        data = client_socket.recv(1024)",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((SERVER_HOST, SERVER_PORT))\nserver_socket.listen(5)\nprint(f\"[*] Listening on {SERVER_HOST}:{SERVER_PORT}\")\nclient_socket, client_address = server_socket.accept()\nprint(f\"[*] Accepted connection from {client_address[0]}:{client_address[1]}\")\ntimestamp = time.time()\nwith open(f\"recieved/{timestamp}.png\", \"wb\") as file:\n    while True:\n        data = client_socket.recv(1024)",
         "detail": "server.server pic",
         "documentation": {}
     },
@@ -207,7 +207,7 @@
         "kind": 5,
         "importPath": "server.server pic",
         "description": "server.server pic",
-        "peekOfCode": "timestamp = time.time()\nwith open(f\"{timestamp}.png\", \"wb\") as file:\n    while True:\n        data = client_socket.recv(1024)\n        if not data:\n            break\n        file.write(data)\nprint(\"[+] Picture received and saved.\")\nclient_socket.close()\nserver_socket.close()",
+        "peekOfCode": "timestamp = time.time()\nwith open(f\"recieved/{timestamp}.png\", \"wb\") as file:\n    while True:\n        data = client_socket.recv(1024)\n        if not data:\n            break\n        file.write(data)\nprint(\"[+] Picture received and saved.\")\nclient_socket.close()\nserver_socket.close()",
         "detail": "server.server pic",
         "documentation": {}
     },
