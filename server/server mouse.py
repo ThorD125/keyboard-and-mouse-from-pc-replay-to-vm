@@ -1,6 +1,7 @@
 import struct
 import socket
 import pyautogui
+import time
 
 def main():
     host = '0.0.0.0'  # Listen on all available network interfaces
@@ -24,7 +25,6 @@ def main():
 
     try:
         while True:
-            # pyautogui.mouseDown()
             serverinput = client_socket.recv(4)
             if not serverinput:
                 break
@@ -40,7 +40,11 @@ def main():
             if len(coords) == 2:
                 x, y = coords[0], coords[1]
                 print(f"Received: {x}, {y}")    
+                pyautogui.mouseDown()
                 pyautogui.moveTo(int(x), int(y))
+                time.sleep(0.01)
+                pyautogui.mouseUp()
+
             else:
                 print(f"Received unexpected data: {data}")
 

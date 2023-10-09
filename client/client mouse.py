@@ -13,7 +13,7 @@ def main():
     previous_mouse_pos = None
     previous_mouse_x = None
     previous_mouse_y = None
-    marge_mouse_px = 15
+    marge_mouse_px = 30
 
     try:
         while True:
