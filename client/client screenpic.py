@@ -11,7 +11,7 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 client_socket.connect((SERVER_HOST, SERVER_PORT))
 
-app_window = pyautogui.getWindowsWithTitle('Notepad')[0]
+app_window = pyautogui.getWindowsWithTitle('Warframe')[0]
 
 app_window.activate()
 time.sleep(0.1)

@@ -52,6 +52,24 @@
         "documentation": {}
     },
     {
+        "label": "cv2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "cv2",
+        "description": "cv2",
+        "detail": "cv2",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
         "label": "pygetwindow",
         "kind": 6,
         "isExtraImport": true,
@@ -90,7 +108,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "SERVER_HOST = '127.0.0.1'\nSERVER_PORT = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2",
+        "peekOfCode": "SERVER_HOST = '127.0.0.1'\nSERVER_PORT = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Warframe')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -99,7 +117,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "SERVER_PORT = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2",
+        "peekOfCode": "SERVER_PORT = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Warframe')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -108,7 +126,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Warframe')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -117,7 +135,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')",
+        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle('Warframe')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -173,6 +191,69 @@
         "description": "client.client screenpic",
         "peekOfCode": "image_data = image_stream.getvalue()\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\nclient_socket.close()",
         "detail": "client.client screenpic",
+        "documentation": {}
+    },
+    {
+        "label": "image1",
+        "kind": 5,
+        "importPath": "server.checkpics",
+        "description": "server.checkpics",
+        "peekOfCode": "image1 = cv2.imread('recieved/first.png')\nimage2 = cv2.imread('recieved/right.png')\n# Convert the images to grayscale for easier comparison\ngray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)\ngray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)",
+        "detail": "server.checkpics",
+        "documentation": {}
+    },
+    {
+        "label": "image2",
+        "kind": 5,
+        "importPath": "server.checkpics",
+        "description": "server.checkpics",
+        "peekOfCode": "image2 = cv2.imread('recieved/right.png')\n# Convert the images to grayscale for easier comparison\ngray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)\ngray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)",
+        "detail": "server.checkpics",
+        "documentation": {}
+    },
+    {
+        "label": "gray1",
+        "kind": 5,
+        "importPath": "server.checkpics",
+        "description": "server.checkpics",
+        "peekOfCode": "gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)\ngray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)",
+        "detail": "server.checkpics",
+        "documentation": {}
+    },
+    {
+        "label": "gray2",
+        "kind": 5,
+        "importPath": "server.checkpics",
+        "description": "server.checkpics",
+        "peekOfCode": "gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)\n# Calculate the absolute difference between the two images\ndiff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n# Initialize an empty list to store the mouse movement",
+        "detail": "server.checkpics",
+        "documentation": {}
+    },
+    {
+        "label": "diff",
+        "kind": 5,
+        "importPath": "server.checkpics",
+        "description": "server.checkpics",
+        "peekOfCode": "diff = cv2.absdiff(gray1, gray2)\n# Define a threshold to identify significant differences (you may need to adjust this)\nthreshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n# Initialize an empty list to store the mouse movement\nmouse_movement = []\n# Iterate through the detected contours (representing movement)",
+        "detail": "server.checkpics",
+        "documentation": {}
+    },
+    {
+        "label": "threshold",
+        "kind": 5,
+        "importPath": "server.checkpics",
+        "description": "server.checkpics",
+        "peekOfCode": "threshold = 30\n# Create a binary mask where differences above the threshold are set to 255 (white)\n_, thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)\n# Find contours in the thresholded image to identify areas of movement\ncontours, _ = cv2.findContours(thresholded, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)\n# Initialize an empty list to store the mouse movement\nmouse_movement = []\n# Iterate through the detected contours (representing movement)\nfor contour in contours:\n    # Calculate the centroid of the contour (potential mouse movement)",
+        "detail": "server.checkpics",
+        "documentation": {}
+    },
+    {
+        "label": "mouse_movement",
+        "kind": 5,
+        "importPath": "server.checkpics",
+        "description": "server.checkpics",
+        "peekOfCode": "mouse_movement = []\n# Iterate through the detected contours (representing movement)\nfor contour in contours:\n    # Calculate the centroid of the contour (potential mouse movement)\n    M = cv2.moments(contour)\n    if M[\"m00\"] != 0:\n        cx = int(M[\"m10\"] / M[\"m00\"])\n        cy = int(M[\"m01\"] / M[\"m00\"])\n        mouse_movement.append((cx, cy))\n# Print the detected mouse movement",
+        "detail": "server.checkpics",
         "documentation": {}
     },
     {
