@@ -6,7 +6,7 @@ client_socket = connect_to_server("192.168.32.156", 12345)
 # client_socket = connect_to_server("127.0.0.1", 12345)
 
 
-keys_to_monitor = ["w", "a", "s", "d"]
+keys_to_monitor = ["w", "a", "s", "d", "shift", "space", "ctrl"]
 previous_states = {key: False for key in keys_to_monitor}
 
 

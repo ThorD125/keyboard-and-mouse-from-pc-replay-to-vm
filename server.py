@@ -9,7 +9,8 @@ server_socket = create_server_socket('192.168.32.156', 12345)
 # server_socket = create_server_socket('127.0.0.1', 12345)
 
 
-window = pygetwindow.getWindowsWithTitle("Notepad")[0]
+window = pygetwindow.getWindowsWithTitle("Warframe")[0]
+# window = pygetwindow.getWindowsWithTitle("Notepad")[0]
 window.activate()
 screen_width, screen_height = pyautogui.size()
 center_x = screen_width // 2
@@ -28,9 +29,15 @@ while True:
         break
 
     if "press" in data:
-        keyboard.press(data.split(":")[1])
+        try:
+            keyboard.press(data.split(":")[1])
+        except:
+            pass
     elif "release" in data:
-        keyboard.release(data.split(":")[1])
+        try:
+            keyboard.release(data.split(":")[1])
+        except:
+            pass
     print(f"Received: {data}")
 
 
