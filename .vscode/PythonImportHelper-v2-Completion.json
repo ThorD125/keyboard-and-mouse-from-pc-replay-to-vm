@@ -43,14 +43,6 @@
         "documentation": {}
     },
     {
-        "label": "app_window",
-        "importPath": "client.client screenpic",
-        "description": "client.client screenpic",
-        "isExtraImport": true,
-        "detail": "client.client screenpic",
-        "documentation": {}
-    },
-    {
         "label": "time",
         "kind": 6,
         "isExtraImport": true,
@@ -98,7 +90,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "SERVER_HOST = '127.0.0.1'  # Replace with the server's IP address or hostname\nSERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))",
+        "peekOfCode": "SERVER_HOST = '127.0.0.1'\nSERVER_PORT = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -107,7 +99,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "SERVER_PORT = 12345\n# Create a socket object\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2",
+        "peekOfCode": "SERVER_PORT = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -116,7 +108,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# Connect to the server\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((SERVER_HOST, SERVER_PORT))\napp_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -125,7 +117,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Create an in-memory binary stream\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')",
+        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle('Notepad')[0]\napp_window.activate()\ntime.sleep(0.1)\nleft, top, right, bottom = app_window.left, app_window.top, app_window.right, app_window.bottom\nscreenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -134,7 +126,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Create an in-memory binary stream\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\n# Send the image data to the server\nclient_socket.send(image_data)",
+        "peekOfCode": "screenshot = ImageGrab.grab(bbox=(left, top, right, bottom))\nnew_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\nclient_socket.close()",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -143,7 +135,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "new_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Create an in-memory binary stream\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\n# Send the image data to the server\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")",
+        "peekOfCode": "new_width = screenshot.width // 2\nnew_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\nclient_socket.close()",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -152,7 +144,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "new_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\n# Create an in-memory binary stream\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\n# Send the image data to the server\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\n# Close the socket",
+        "peekOfCode": "new_height = screenshot.height // 2\nresized_screenshot = screenshot.resize((new_width, new_height))\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\nclient_socket.close()",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -161,7 +153,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "resized_screenshot = screenshot.resize((new_width, new_height))\n# Create an in-memory binary stream\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\n# Send the image data to the server\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\n# Close the socket\nclient_socket.close()",
+        "peekOfCode": "resized_screenshot = screenshot.resize((new_width, new_height))\nimage_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\nclient_socket.close()",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -170,7 +162,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "image_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\n# Send the image data to the server\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\n# Close the socket\nclient_socket.close()",
+        "peekOfCode": "image_stream = io.BytesIO()\nresized_screenshot.save(image_stream, format='PNG')\nimage_data = image_stream.getvalue()\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\nclient_socket.close()",
         "detail": "client.client screenpic",
         "documentation": {}
     },
@@ -179,7 +171,7 @@
         "kind": 5,
         "importPath": "client.client screenpic",
         "description": "client.client screenpic",
-        "peekOfCode": "image_data = image_stream.getvalue()\n# Send the image data to the server\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\n# Close the socket\nclient_socket.close()",
+        "peekOfCode": "image_data = image_stream.getvalue()\nclient_socket.send(image_data)\nprint(\"[+] Picture sent to the server.\")\nclient_socket.close()",
         "detail": "client.client screenpic",
         "documentation": {}
     },
