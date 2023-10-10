@@ -1,6 +1,7 @@
 import socket
 import pyautogui
 import struct
+import time
 
 def main():
     # host = '127.0.0.1'
@@ -13,7 +14,6 @@ def main():
     previous_mouse_pos = None
     previous_mouse_x = None
     previous_mouse_y = None
-    marge_mouse_px = 30
 
     try:
         while True:
@@ -25,15 +25,18 @@ def main():
                 # client_socket.sendall(message)
 
                 if previous_mouse_x != None and previous_mouse_y != None:
-                    if not((int(previous_mouse_x)-marge_mouse_px < int(x) < int(previous_mouse_x)+marge_mouse_px)) and not((int(previous_mouse_y)-marge_mouse_px < int(y) < int(previous_mouse_y)+marge_mouse_px)):
+                    if (int(previous_mouse_x) != int(x)) and ((int(previous_mouse_y)!= int(y))):
                         previous_mouse_x = x
                         previous_mouse_y = y
 
-                        print(f"Sending: {data}")
 
-                        message = struct.pack('!I', len(data)) + data.encode('utf-8')
+                        timeddata = f"{data}"
+
+                        print(f"Sending: {timeddata}")
+                        message = struct.pack('!I', len(timeddata)) + timeddata.encode('utf-8')
+                        
+
                         client_socket.sendall(message)
-
                 elif previous_mouse_x == None and previous_mouse_y == None:
                     previous_mouse_x = x
                     previous_mouse_y = y
