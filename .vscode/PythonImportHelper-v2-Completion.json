@@ -113,20 +113,11 @@
         "documentation": {}
     },
     {
-        "label": "between_offset",
-        "kind": 2,
-        "importPath": "client.client mouse",
-        "description": "client.client mouse",
-        "peekOfCode": "def between_offset(prev_number, number, offset):\n    return (prev_number - offset) < number < (prev_number + offset)\ndef main():\n    # host = '127.0.0.1'\n    host = '192.168.32.156'\n    port = 12345\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((host, port))\n    previous_mouse_pos = None\n    previous_mouse_x = None",
-        "detail": "client.client mouse",
-        "documentation": {}
-    },
-    {
         "label": "main",
         "kind": 2,
         "importPath": "client.client mouse",
         "description": "client.client mouse",
-        "peekOfCode": "def main():\n    # host = '127.0.0.1'\n    host = '192.168.32.156'\n    port = 12345\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((host, port))\n    previous_mouse_pos = None\n    previous_mouse_x = None\n    previous_mouse_y = None\n    offset = 0",
+        "peekOfCode": "def main():\n    # host = '127.0.0.1'\n    host = '192.168.32.156'\n    port = 12345\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((host, port))\n    previous_mouse_pos = None\n    previous_mouse_x = None\n    previous_mouse_y = None\n    try:",
         "detail": "client.client mouse",
         "documentation": {}
     },
