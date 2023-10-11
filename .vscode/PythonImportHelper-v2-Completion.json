@@ -144,7 +144,7 @@
         "kind": 2,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "def send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            globals()['prev_mouse_pos'] = data\n            print(data)\n            message = struct.pack('!I', len(data)) + data.encode('utf-8')\n            client_socket.sendall(message)\n    except Exception as e:\n        print(f\"an error occured: {e}\")",
+        "peekOfCode": "def send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:\n                globals()['prev_mouse_pos'] = data\n                print(data)\n                message = struct.pack('!I', len(data)) + data.encode('utf-8')\n                client_socket.sendall(message)\n                globals()['counter'] = 0",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -153,7 +153,7 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "globals()['prev_mouse_pos'] = None\nhost = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            globals()['prev_mouse_pos'] = data",
+        "peekOfCode": "globals()['prev_mouse_pos'] = None\nhost = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -162,7 +162,7 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "host = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            globals()['prev_mouse_pos'] = data\n            print(data)",
+        "peekOfCode": "host = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -171,7 +171,7 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "port = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            globals()['prev_mouse_pos'] = data\n            print(data)\n            message = struct.pack('!I', len(data)) + data.encode('utf-8')",
+        "peekOfCode": "port = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -180,7 +180,25 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            globals()['prev_mouse_pos'] = data\n            print(data)\n            message = struct.pack('!I', len(data)) + data.encode('utf-8')\n            client_socket.sendall(message)",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:\n                globals()['prev_mouse_pos'] = data",
+        "detail": "client.client mouse improve",
+        "documentation": {}
+    },
+    {
+        "label": "counter",
+        "kind": 5,
+        "importPath": "client.client mouse improve",
+        "description": "client.client mouse improve",
+        "peekOfCode": "counter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:\n                globals()['prev_mouse_pos'] = data\n                print(data)\n                message = struct.pack('!I', len(data)) + data.encode('utf-8')",
+        "detail": "client.client mouse improve",
+        "documentation": {}
+    },
+    {
+        "label": "skip",
+        "kind": 5,
+        "importPath": "client.client mouse improve",
+        "description": "client.client mouse improve",
+        "peekOfCode": "skip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:\n                globals()['prev_mouse_pos'] = data\n                print(data)\n                message = struct.pack('!I', len(data)) + data.encode('utf-8')\n                client_socket.sendall(message)",
         "detail": "client.client mouse improve",
         "documentation": {}
     },

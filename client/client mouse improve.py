@@ -10,18 +10,23 @@ port = 12345
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((host, port))
 
+counter = 0
+skip = 10
 
 def send_mouse(x):
     try:
         data = f"{x.x},{x.y}"
 
         if data != globals()['prev_mouse_pos']:
-            globals()['prev_mouse_pos'] = data
-            
-            print(data)
+            if globals()['counter'] == globals()['skip']:
+                globals()['prev_mouse_pos'] = data
+                
+                print(data)
 
-            message = struct.pack('!I', len(data)) + data.encode('utf-8')
-            client_socket.sendall(message)
+                message = struct.pack('!I', len(data)) + data.encode('utf-8')
+                client_socket.sendall(message)
+                globals()['counter'] = 0
+            globals()['counter'] += 1
     except Exception as e:
         print(f"an error occured: {e}")
         raise e
