@@ -1,7 +1,10 @@
 
+import mouse
 import socket
 import pyautogui
-
+import struct
+import mouse
+import mouse._winmouse as _os_mouse
 
 host = '0.0.0.0'
 port = 12345
@@ -12,8 +15,8 @@ server_socket.bind((host, port))
 server_socket.listen(1)
 
 
-app_window = pyautogui.getWindowsWithTitle("Warframe")[0]
-app_window.activate()
+# app_window = pyautogui.getWindowsWithTitle("Warframe")[0]
+# app_window.activate()
 
 
 client_socket, addr = server_socket.accept()
@@ -34,10 +37,15 @@ try:
             x, y = coords[0], coords[1]
             # pyautogui.moveTo(int(x), int(y),0)
             # win32api.SetCursorPos((int(x), int(y)))
-            _os_mouse.move_to(event.x, event.y)
-            #     _os_mouse.release(event.button)
+            # print(f"{x}, {y}")
+            _os_mouse.move_to(x, y)
+
+
+
+
+            #     _os_mouse.release(x.button)
             # else:
-            #     _os_mouse.press(event.button)
+            #     _os_mouse.press(x.button)
             moves = 0
             print(f"Received unexpected tdata: {x}, {y}")
         moves += 1
