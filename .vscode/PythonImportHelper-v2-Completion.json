@@ -133,46 +133,46 @@
     {
         "label": "send_mouse",
         "kind": 2,
-        "importPath": "client.client mouse test",
-        "description": "client.client mouse test",
+        "importPath": "client.client mouse improve",
+        "description": "client.client mouse improve",
         "peekOfCode": "def send_mouse(x):\n    data = f\"{x.x},{x.y}\"\n    if data != globals()['prev_mouse_pos']:\n        globals()['prev_mouse_pos'] = data\n        print(data)\n        message = struct.pack('!I', len(data)) + data.encode('utf-8')\n        client_socket.sendall(message)\nmouse.hook(send_mouse)\nmouse.wait(button=mouse.RIGHT, target_types=(mouse.DOWN,))\nmouse.unhook(send_mouse)",
-        "detail": "client.client mouse test",
+        "detail": "client.client mouse improve",
         "documentation": {}
     },
     {
         "label": "globals()['prev_mouse_pos']",
         "kind": 5,
-        "importPath": "client.client mouse test",
-        "description": "client.client mouse test",
+        "importPath": "client.client mouse improve",
+        "description": "client.client mouse improve",
         "peekOfCode": "globals()['prev_mouse_pos'] = None\n# def namestr(obj):\n#     print(obj)\n#     print(locals())\n#     namespace = locals()\n#     print([name for name in namespace if namespace[name] is obj])\nhost = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))",
-        "detail": "client.client mouse test",
+        "detail": "client.client mouse improve",
         "documentation": {}
     },
     {
         "label": "host",
         "kind": 5,
-        "importPath": "client.client mouse test",
-        "description": "client.client mouse test",
+        "importPath": "client.client mouse improve",
+        "description": "client.client mouse improve",
         "peekOfCode": "host = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ndef send_mouse(x):\n    data = f\"{x.x},{x.y}\"\n    if data != globals()['prev_mouse_pos']:\n        globals()['prev_mouse_pos'] = data\n        print(data)\n        message = struct.pack('!I', len(data)) + data.encode('utf-8')",
-        "detail": "client.client mouse test",
+        "detail": "client.client mouse improve",
         "documentation": {}
     },
     {
         "label": "port",
         "kind": 5,
-        "importPath": "client.client mouse test",
-        "description": "client.client mouse test",
+        "importPath": "client.client mouse improve",
+        "description": "client.client mouse improve",
         "peekOfCode": "port = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ndef send_mouse(x):\n    data = f\"{x.x},{x.y}\"\n    if data != globals()['prev_mouse_pos']:\n        globals()['prev_mouse_pos'] = data\n        print(data)\n        message = struct.pack('!I', len(data)) + data.encode('utf-8')\n        client_socket.sendall(message)",
-        "detail": "client.client mouse test",
+        "detail": "client.client mouse improve",
         "documentation": {}
     },
     {
         "label": "client_socket",
         "kind": 5,
-        "importPath": "client.client mouse test",
-        "description": "client.client mouse test",
+        "importPath": "client.client mouse improve",
+        "description": "client.client mouse improve",
         "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ndef send_mouse(x):\n    data = f\"{x.x},{x.y}\"\n    if data != globals()['prev_mouse_pos']:\n        globals()['prev_mouse_pos'] = data\n        print(data)\n        message = struct.pack('!I', len(data)) + data.encode('utf-8')\n        client_socket.sendall(message)\nmouse.hook(send_mouse)",
-        "detail": "client.client mouse test",
+        "detail": "client.client mouse improve",
         "documentation": {}
     },
     {
