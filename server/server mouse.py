@@ -39,7 +39,9 @@ def main():
                 #  and moves == skippers:
                 x, y = coords[0], coords[1]
                 # pyautogui.moveTo(int(x), int(y),0)
+                pyautogui.mouseDown()
                 win32api.SetCursorPos((int(x), int(y)))
+                pyautogui.mouseUp()
                 moves = 0
                 print(f"Received unexpected tdata: {x}, {y}")
             moves += 1

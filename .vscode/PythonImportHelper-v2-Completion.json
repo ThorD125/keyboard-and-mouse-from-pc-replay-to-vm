@@ -1,5 +1,14 @@
 [
     {
+        "label": "mouse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mouse",
+        "description": "mouse",
+        "detail": "mouse",
+        "documentation": {}
+    },
+    {
         "label": "socket",
         "kind": 6,
         "isExtraImport": true,
@@ -119,6 +128,15 @@
         "description": "server_library",
         "isExtraImport": true,
         "detail": "server_library",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 2,
+        "importPath": "client.client mouse test",
+        "description": "client.client mouse test",
+        "peekOfCode": "def test(x):\n    print(f\"{x.x},{x.y}\")\nmouse.hook(test)\nmouse.wait(button=mouse.RIGHT, target_types=(mouse.DOWN,))\nmouse.unhook(test)\n# print(recorded)",
+        "detail": "client.client mouse test",
         "documentation": {}
     },
     {
