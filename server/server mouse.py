@@ -2,6 +2,7 @@ import struct
 import socket
 import pyautogui
 import time
+import win32api
 
 pyautogui.FAILSAFE = False
 
@@ -22,7 +23,7 @@ def main():
     print(f"Connection from {addr}")
 
     moves = 0
-    skippers = 30
+    skippers = 0
 
     try:
         while True:
@@ -34,9 +35,11 @@ def main():
             data = client_socket.recv(message_length).decode('utf-8')
 
             coords = data.split(',')
-            if len(coords) == 2 and moves == skippers:
+            if len(coords) == 2:
+                #  and moves == skippers:
                 x, y = coords[0], coords[1]
-                pyautogui.moveTo(int(x), int(y))
+                # pyautogui.moveTo(int(x), int(y),0)
+                win32api.SetCursorPos((int(x), int(y)))
                 moves = 0
                 print(f"Received unexpected tdata: {x}, {y}")
             moves += 1

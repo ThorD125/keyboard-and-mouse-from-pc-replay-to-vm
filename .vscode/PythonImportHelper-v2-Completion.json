@@ -61,6 +61,15 @@
         "documentation": {}
     },
     {
+        "label": "win32api",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "win32api",
+        "description": "win32api",
+        "detail": "win32api",
+        "documentation": {}
+    },
+    {
         "label": "pygetwindow",
         "kind": 6,
         "isExtraImport": true,
@@ -117,7 +126,7 @@
         "kind": 2,
         "importPath": "client.client mouse",
         "description": "client.client mouse",
-        "peekOfCode": "def main():\n    # host = '127.0.0.1'\n    host = '192.168.32.156'\n    port = 12345\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((host, port))\n    previous_mouse_pos = None\n    previous_mouse_x = None\n    previous_mouse_y = None\n    try:",
+        "peekOfCode": "def main():\n    # host = '127.0.0.1'\n    host = '192.168.32.156'\n    port = 12345\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((host, port))\n    previous_mouse_pos = None\n    previous_mouse_x = None\n    previous_mouse_y = None\n    moves = 0",
         "detail": "client.client mouse",
         "documentation": {}
     },

@@ -17,6 +17,9 @@ def main():
     previous_mouse_y = None
 
 
+    moves = 0
+    skippers = 20
+
     try:
         while True:
             x, y = pyautogui.position()
@@ -28,17 +31,17 @@ def main():
 
                 if previous_mouse_x != None and previous_mouse_y != None:
                     if previous_mouse_pos != data:
-                        previous_mouse_x = x
-                        previous_mouse_y = y
+                        if moves == skippers:
+                            previous_mouse_x = x
+                            previous_mouse_y = y
 
 
-                        timeddata = f"{data}"
 
-                        print(f"Sending: {timeddata}")
-                        message = struct.pack('!I', len(timeddata)) + timeddata.encode('utf-8')
-                        
-
-                        client_socket.sendall(message)
+                            print(f"Sending: {data}")
+                            message = struct.pack('!I', len(data)) + data.encode('utf-8')
+                            client_socket.sendall(message)
+                            moves = 0
+                        moves += 1
                 elif previous_mouse_x == None and previous_mouse_y == None:
                     previous_mouse_x = x
                     previous_mouse_y = y
