@@ -275,6 +275,42 @@
         "documentation": {}
     },
     {
+        "label": "host",
+        "kind": 5,
+        "importPath": "server.server mouse improve",
+        "description": "server.server mouse improve",
+        "peekOfCode": "host = '0.0.0.0'\nport = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((host, port))\nserver_socket.listen(1)\napp_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\napp_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:",
+        "detail": "server.server mouse improve",
+        "documentation": {}
+    },
+    {
+        "label": "port",
+        "kind": 5,
+        "importPath": "server.server mouse improve",
+        "description": "server.server mouse improve",
+        "peekOfCode": "port = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((host, port))\nserver_socket.listen(1)\napp_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\napp_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:\n        serverinput = client_socket.recv(4)",
+        "detail": "server.server mouse improve",
+        "documentation": {}
+    },
+    {
+        "label": "server_socket",
+        "kind": 5,
+        "importPath": "server.server mouse improve",
+        "description": "server.server mouse improve",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((host, port))\nserver_socket.listen(1)\napp_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\napp_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:\n        serverinput = client_socket.recv(4)\n        if not serverinput:",
+        "detail": "server.server mouse improve",
+        "documentation": {}
+    },
+    {
+        "label": "app_window",
+        "kind": 5,
+        "importPath": "server.server mouse improve",
+        "description": "server.server mouse improve",
+        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\napp_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:\n        serverinput = client_socket.recv(4)\n        if not serverinput:\n            break\n        message_length = struct.unpack('!I', serverinput)[0]\n        data = client_socket.recv(message_length).decode('utf-8')",
+        "detail": "server.server mouse improve",
+        "documentation": {}
+    },
+    {
         "label": "main",
         "kind": 2,
         "importPath": "server.server mouse",
