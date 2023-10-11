@@ -144,7 +144,7 @@
         "kind": 2,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "def send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:\n                globals()['prev_mouse_pos'] = data\n                print(data)\n                message = struct.pack('!I', len(data)) + data.encode('utf-8')\n                client_socket.sendall(message)\n                globals()['counter'] = 0",
+        "peekOfCode": "def send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos'] and globals()['counter'] == globals()['skip']:\n            globals()['prev_mouse_pos'] = data\n            print(data)\n            message = struct.pack('!I', len(data)) + data.encode('utf-8')\n            client_socket.sendall(message)\n            globals()['counter'] = 0\n        globals()['counter'] += 1",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -153,7 +153,7 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "globals()['prev_mouse_pos'] = None\nhost = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"",
+        "peekOfCode": "globals()['prev_mouse_pos'] = None\nhost = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 15\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -162,7 +162,7 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "host = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:",
+        "peekOfCode": "host = '192.168.32.156'\nport = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 15\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos'] and globals()['counter'] == globals()['skip']:",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -171,7 +171,7 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "port = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:",
+        "peekOfCode": "port = 12345\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 15\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos'] and globals()['counter'] == globals()['skip']:\n            globals()['prev_mouse_pos'] = data",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -180,7 +180,7 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:\n                globals()['prev_mouse_pos'] = data",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((host, port))\ncounter = 0\nskip = 15\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos'] and globals()['counter'] == globals()['skip']:\n            globals()['prev_mouse_pos'] = data\n            print(data)",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -189,7 +189,7 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "counter = 0\nskip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:\n                globals()['prev_mouse_pos'] = data\n                print(data)\n                message = struct.pack('!I', len(data)) + data.encode('utf-8')",
+        "peekOfCode": "counter = 0\nskip = 15\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos'] and globals()['counter'] == globals()['skip']:\n            globals()['prev_mouse_pos'] = data\n            print(data)\n            message = struct.pack('!I', len(data)) + data.encode('utf-8')\n            client_socket.sendall(message)",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -198,7 +198,7 @@
         "kind": 5,
         "importPath": "client.client mouse improve",
         "description": "client.client mouse improve",
-        "peekOfCode": "skip = 10\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos']:\n            if globals()['counter'] == globals()['skip']:\n                globals()['prev_mouse_pos'] = data\n                print(data)\n                message = struct.pack('!I', len(data)) + data.encode('utf-8')\n                client_socket.sendall(message)",
+        "peekOfCode": "skip = 15\ndef send_mouse(x):\n    try:\n        data = f\"{x.x},{x.y}\"\n        if data != globals()['prev_mouse_pos'] and globals()['counter'] == globals()['skip']:\n            globals()['prev_mouse_pos'] = data\n            print(data)\n            message = struct.pack('!I', len(data)) + data.encode('utf-8')\n            client_socket.sendall(message)\n            globals()['counter'] = 0",
         "detail": "client.client mouse improve",
         "documentation": {}
     },
@@ -306,7 +306,7 @@
         "kind": 5,
         "importPath": "server.server mouse improve",
         "description": "server.server mouse improve",
-        "peekOfCode": "host = '0.0.0.0'\nport = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((host, port))\nserver_socket.listen(1)\n# app_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\n# app_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:",
+        "peekOfCode": "host = '0.0.0.0'\nport = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((host, port))\nserver_socket.listen(1)\napp_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\napp_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:",
         "detail": "server.server mouse improve",
         "documentation": {}
     },
@@ -315,7 +315,7 @@
         "kind": 5,
         "importPath": "server.server mouse improve",
         "description": "server.server mouse improve",
-        "peekOfCode": "port = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((host, port))\nserver_socket.listen(1)\n# app_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\n# app_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:\n        serverinput = client_socket.recv(4)",
+        "peekOfCode": "port = 12345\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((host, port))\nserver_socket.listen(1)\napp_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\napp_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:\n        serverinput = client_socket.recv(4)",
         "detail": "server.server mouse improve",
         "documentation": {}
     },
@@ -324,7 +324,16 @@
         "kind": 5,
         "importPath": "server.server mouse improve",
         "description": "server.server mouse improve",
-        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((host, port))\nserver_socket.listen(1)\n# app_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\n# app_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:\n        serverinput = client_socket.recv(4)\n        if not serverinput:",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((host, port))\nserver_socket.listen(1)\napp_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\napp_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:\n        serverinput = client_socket.recv(4)\n        if not serverinput:",
+        "detail": "server.server mouse improve",
+        "documentation": {}
+    },
+    {
+        "label": "app_window",
+        "kind": 5,
+        "importPath": "server.server mouse improve",
+        "description": "server.server mouse improve",
+        "peekOfCode": "app_window = pyautogui.getWindowsWithTitle(\"Warframe\")[0]\napp_window.activate()\nclient_socket, addr = server_socket.accept()\ntry:\n    while True:\n        serverinput = client_socket.recv(4)\n        if not serverinput:\n            break\n        message_length = struct.unpack('!I', serverinput)[0]\n        data = client_socket.recv(message_length).decode('utf-8')",
         "detail": "server.server mouse improve",
         "documentation": {}
     },

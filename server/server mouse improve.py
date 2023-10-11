@@ -15,8 +15,8 @@ server_socket.bind((host, port))
 server_socket.listen(1)
 
 
-# app_window = pyautogui.getWindowsWithTitle("Warframe")[0]
-# app_window.activate()
+app_window = pyautogui.getWindowsWithTitle("Warframe")[0]
+app_window.activate()
 
 
 client_socket, addr = server_socket.accept()
