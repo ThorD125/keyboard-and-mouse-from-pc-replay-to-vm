@@ -20,7 +20,7 @@ def main():
     print(f"Connection from {addr}")
 
     moves = 0
-    skippers = 30
+    skippers = 10
 
     try:
         while True:

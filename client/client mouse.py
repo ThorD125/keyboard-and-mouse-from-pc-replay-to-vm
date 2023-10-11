@@ -3,6 +3,9 @@ import pyautogui
 import struct
 import time
 
+def between_offset(prev_number, number, offset):
+    return (prev_number - offset) < number < (prev_number + offset)
+
 def main():
     # host = '127.0.0.1'
     host = '192.168.32.156'
@@ -14,6 +17,7 @@ def main():
     previous_mouse_pos = None
     previous_mouse_x = None
     previous_mouse_y = None
+    offset = 30
 
     try:
         while True:
@@ -25,7 +29,7 @@ def main():
                 # client_socket.sendall(message)
 
                 if previous_mouse_x != None and previous_mouse_y != None:
-                    if (int(previous_mouse_x) != int(x)) and ((int(previous_mouse_y)!= int(y))):
+                    if not(between_offset(previous_mouse_y, y, offset) and between_offset(previous_mouse_x, x, offset)):
                         previous_mouse_x = x
                         previous_mouse_y = y
 
