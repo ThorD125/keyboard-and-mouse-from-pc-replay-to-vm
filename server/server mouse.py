@@ -15,8 +15,8 @@ def main():
 
     print(f"Server listening on {host}:{port}")
 
-    # app_window = pyautogui.getWindowsWithTitle("Paint")[0]
-    # app_window.activate()
+    app_window = pyautogui.getWindowsWithTitle("Warframe")[0]
+    app_window.activate()
 
     client_socket, addr = server_socket.accept()
     print(f"Connection from {addr}")
