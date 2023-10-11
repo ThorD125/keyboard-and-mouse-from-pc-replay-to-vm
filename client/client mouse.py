@@ -17,7 +17,7 @@ def main():
     previous_mouse_pos = None
     previous_mouse_x = None
     previous_mouse_y = None
-    offset = 3
+    offset = 0
 
     try:
         while True:
