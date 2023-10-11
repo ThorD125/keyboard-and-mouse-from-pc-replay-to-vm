@@ -3,6 +3,8 @@ import socket
 import pyautogui
 import time
 
+pyautogui.FAILSAFE = False
+
 def main():
     host = '0.0.0.0'  # Listen on all available network interfaces
     port = 12345  # Port for communication
@@ -20,7 +22,7 @@ def main():
     print(f"Connection from {addr}")
 
     moves = 0
-    skippers = 10
+    skippers = 30
 
     try:
         while True:

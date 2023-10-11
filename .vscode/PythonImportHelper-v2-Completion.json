@@ -126,7 +126,7 @@
         "kind": 2,
         "importPath": "client.client mouse",
         "description": "client.client mouse",
-        "peekOfCode": "def main():\n    # host = '127.0.0.1'\n    host = '192.168.32.156'\n    port = 12345\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((host, port))\n    previous_mouse_pos = None\n    previous_mouse_x = None\n    previous_mouse_y = None\n    offset = 30",
+        "peekOfCode": "def main():\n    # host = '127.0.0.1'\n    host = '192.168.32.156'\n    port = 12345\n    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    client_socket.connect((host, port))\n    previous_mouse_pos = None\n    previous_mouse_x = None\n    previous_mouse_y = None\n    offset = 3",
         "detail": "client.client mouse",
         "documentation": {}
     },
@@ -226,6 +226,15 @@
         "importPath": "server.server mouse",
         "description": "server.server mouse",
         "peekOfCode": "def main():\n    host = '0.0.0.0'  # Listen on all available network interfaces\n    port = 12345  # Port for communication\n    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server_socket.bind((host, port))\n    server_socket.listen(1)  # Listen for one connection at a time\n    print(f\"Server listening on {host}:{port}\")\n    # app_window = pyautogui.getWindowsWithTitle(\"Paint\")[0]\n    # app_window.activate()\n    client_socket, addr = server_socket.accept()",
+        "detail": "server.server mouse",
+        "documentation": {}
+    },
+    {
+        "label": "pyautogui.FAILSAFE",
+        "kind": 5,
+        "importPath": "server.server mouse",
+        "description": "server.server mouse",
+        "peekOfCode": "pyautogui.FAILSAFE = False\ndef main():\n    host = '0.0.0.0'  # Listen on all available network interfaces\n    port = 12345  # Port for communication\n    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server_socket.bind((host, port))\n    server_socket.listen(1)  # Listen for one connection at a time\n    print(f\"Server listening on {host}:{port}\")\n    # app_window = pyautogui.getWindowsWithTitle(\"Paint\")[0]\n    # app_window.activate()",
         "detail": "server.server mouse",
         "documentation": {}
     },
