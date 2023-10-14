@@ -540,7 +540,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "server_socket = create_server_socket('192.168.32.156', 12345)\n# server_socket = create_server_socket('127.0.0.1', 12345)\n# window = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\nwindow = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    ",
+        "peekOfCode": "server_socket = create_server_socket('192.168.32.156', 12345)\n# server_socket = create_server_socket('127.0.0.1', 12345)\nwindow = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\n# window = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    ",
         "detail": "server",
         "documentation": {}
     },
@@ -549,7 +549,7 @@
         "kind": 5,
         "importPath": "server",
         "description": "server",
-        "peekOfCode": "window = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    \nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')\n    if not data:",
+        "peekOfCode": "window = pygetwindow.getWindowsWithTitle(\"Warframe\")[0]\n# window = pygetwindow.getWindowsWithTitle(\"Notepad\")[0]\nwindow.activate()\nscreen_width, screen_height = pyautogui.size()\ncenter_x = screen_width // 2\ncenter_y = screen_height // 2\nclient_socket, client_address = server_socket.accept()\npyautogui.click(center_x, center_y)    \nwhile True:\n    data = client_socket.recv(1024).decode('utf-8')",
         "detail": "server",
         "documentation": {}
     },
